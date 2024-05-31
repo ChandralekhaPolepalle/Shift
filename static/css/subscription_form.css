@@ -1,15 +1,16 @@
 /* Subscription Form Styles */
+
 .subscribe-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Full viewport height */
-    background-color: #0b0d18; /* Dark background color */
+    min-height: 100vh;
+    background-color: #0b0d18;
     padding: 20px;
 }
 
 .subscribe-form {
-    background-color: #1a233a; /* Form background color */
+    background-color: #1a233a;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,41 +25,41 @@
     color: white;
 }
 
+.terms{
+    margin-left:15%;
+    margin-top:1%;
+}
+
 .subscribe-form .form-group label {
-    color: white; /* Label text color */
+    color: white;
 }
 
 .subscribe-form .form-control {
-    background-color: #24355c; /* Input field background color */
+
     border: none;
-    color: white; /* Input text color */
+    color: white;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
 }
 
-.subscribe-form .form-control::placeholder {
-    color: #aab4cd; /* Placeholder text color */
-}
-
 .subscribe-form .form-check-label {
-    color: white; /* Checkbox label text color */
+    color: white;
 }
 
 .subscribe-form .btn-primary {
-    background-color: #007bff; /* Button background color */
+    background-color: #007bff;
     border: none;
-    color: white; /* Button text color */
+    color: white;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .subscribe-form .btn-primary:hover {
-    background-color: #0056b3; /* Button hover color */
+    background-color: #0056b3;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .form-row {
         display: flex;
