@@ -1,0 +1,78 @@
+
+body, html {
+
+    font-family: Archivo, sans-serif;
+    background-color: #121212;
+}
+
+.hkf-features-section {
+    text-align: left;
+    padding: 40px 20px;
+}
+
+.hkf-features-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hkf-features-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hkf-feature {
+    overflow: hidden;
+    flex: 1;
+    max-width: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.hkf-feature img {
+    width: 584px;
+    height: 370px;
+
+.hkf-feature h3 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.hkf-feature p {
+    font-size: 1em;
+    margin: 0 10px 20px 10px;
+
+}
+
+.hkf-carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hkf-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #555;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.hkf-indicator.active {
+    background-color: #2860E1;
+}
+
+@media (max-width: 768px) {
+    .hkf-features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hkf-feature {
+        width: 90%;
+    }
+}

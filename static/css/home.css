@@ -74,6 +74,8 @@ body
     margin-left:-53%;
 }
 
+
+
 .main-content-text {
     max-width: 400px;
     text-align:left;
@@ -138,7 +140,6 @@ body
     padding: 20px;
     background-color: #000;
     color: #fff;
-    margin-left:6%;
     font-size:12px;
 }
 .footer a{

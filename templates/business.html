@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Businesses Across Industries</title>
+    <style>
+        .businessComponent body {
+            font-family: Arial, sans-serif;
+
+            background-color: #121212;
+            color: white;
+        }
+        .businessComponent .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .businessComponent .header {
+            text-align: left;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .businessComponent .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .businessComponent .header p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .businessComponent .button-container {
+            margin: 20px 0;
+        }
+        .businessComponent .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .businessComponent .carousel {
+            display: flex;
+            overflow: hidden;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .businessComponent .carousel-item {
+            flex: 1;
+            margin: 0 10px;
+            background-color: #222;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.5s ease;
+        }
+        .businessComponent .carousel-item img {
+            max-width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .businessComponent .carousel-item h3 {
+            margin: 10px 0;
+        }
+        .businessComponent .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .businessComponent .carousel-nav button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .businessComponent .carousel-nav button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<div class="businessComponent">
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Businesses Across Industries</h1>
+            <p>SHIFT provides solutions to support businesses to automate their operations.</p>
+            <div class="button-container">
+                <a href="#" class="button">View More</a>
+            </div>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="\static\images\luxury_cars.jpg" alt="OEMs">
+                <h3>OEMs</h3>
+            </div>
+            <div class="carousel-item">
+                <img src="\static\images\nic-y-c.jpg" alt="Transportation">
+                <h3>Transportation</h3>
+            </div>
+            <div class="carousel-item">
+                <img src="\static\images\TuSimple.jpg" alt="Transit">
+                <h3>Transit</h3>
+            </div>
+        </div>
+        <div class="carousel-nav">
+            <button>&lt;</button>
+            <button>&gt;</button>
+        </div>
+    </div>
+</body>
+</div>
+</html>

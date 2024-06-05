@@ -19,5 +19,13 @@ def products():
 def features():
     return render_template('features.html')
 
+@app.route('/productSuites')
+def productSuites():
+    return render_template('product_suites.html')
+
+@app.route('/homeKeyFeatures')
+def homeKeyFeatures():
+    return render_template('home_keyfeatures.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
