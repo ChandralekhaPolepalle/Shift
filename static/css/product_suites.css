@@ -1,0 +1,118 @@
+
+body, html {
+    font-family: 'Archivo', sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+.ps-header {
+    text-align: center;
+    padding: 35px;
+}
+
+.ps-title{
+    font-weight: 500;
+}
+
+.ps-header .ps-title {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.ps-header nav {
+    margin-top: 20px;
+}
+
+.ps-header .ps-tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.ps-header .ps-tabs li {
+    margin: 0 10px;
+}
+
+.ps-header .ps-tabs li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.ps-header .ps-tabs li.ps-active a, .ps-header .ps-tabs li a:hover {
+    border-bottom: 2px solid #2860E1;
+}
+
+.ps-product-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.ps-product-content .ps-image-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.ps-product-content .ps-image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.ps-product-content .ps-text-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.ps-product-content .ps-text-container .ps-heading {
+    font-weight: 700;
+    font-size:3.5em;
+    text-align:center;
+    margin-top: 5%;
+}
+
+.ps-product-content .ps-text-container .ps-subheading {
+    font-size: 1.2em;
+    margin-top: 5%;
+}
+
+.ps-product-content .ps-text-container .ps-description {
+    font-size: 1em;
+    margin-bottom: 5%;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+.ps-product-content .ps-text-container .ps-learn-more {
+    padding: 10px 20px;
+    background-color: #2860E1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ps-product-content .ps-text-container .ps-learn-more:hover {
+    background-color: #1e4aa1;
+}
+
+@media (max-width: 768px) {
+    .ps-product-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ps-product-content .ps-image-container, .ps-product-content .ps-text-container {
+        padding: 10px;
+    }
+
+    .ps-product-content .ps-text-container .ps-heading {
+        font-size: 1.5em;
+    }
+}
