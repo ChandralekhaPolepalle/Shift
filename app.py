@@ -27,5 +27,18 @@ def productSuites():
 def homeKeyFeatures():
     return render_template('home_keyfeatures.html')
 
+@app.route('/business')
+def business():
+    return render_template('business.html')
+
+@app.route('/productAdminPortal')
+def pAdminPortal():
+    return render_template('p_admin_portal.html')
+
+@app.route('/productCustomerApp')
+def pCustomerApp():
+    return render_template('p_customer_app.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

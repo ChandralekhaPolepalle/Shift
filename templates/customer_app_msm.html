@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Service Modules</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body.msm-body {
+            background-color: #000;
+            color: white;
+        }
+        .msm-container {
+            padding-top: 50px;
+        }
+        .msm-module-list {
+            list-style: none;
+            padding: 0;
+        }
+        .msm-module-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            font-size: 18px;
+        }
+        .msm-module-list li:last-child {
+            border-bottom: none;
+        }
+        .msm-module-title {
+            font-weight: bold;
+        }
+        .msm-module-description {
+            color: #aaa;
+        }
+        .ef-effectiveness-section {
+            background-color: #0b0d18;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .ef-effectiveness-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .ef-effectiveness-section p {
+            margin-bottom: 40px;
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        .ef-statistics {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .ef-stat-card {
+            flex: 1;
+            margin: 20px;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+         .ef-stat-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: #fff;
+            transform: translateY(-50%);
+        }
+
+        .ef-stat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .ef-stat-card p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .ef-stat-circle {
+            position: relative;
+            margin: 0 auto 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(#007bff 0 50%, transparent 50% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ef-stat-circle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #0b0d18;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .ef-stat-circle span {
+            position: relative;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body class="msm-body">
+    <div class="container msm-container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/static/images/msm_ca.png" class="img-fluid" alt="Multi-Service Modules Image">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4">Multi-Service Modules</h2>
+                <ul class="msm-module-list">
+                    <li>
+                        <div class="msm-module-title">01. CAR SUBSCRIPTION</div>
+                        <div class="msm-module-description">Monthly all-inclusive car subscription management.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">02. SHORT-TERM RENTAL</div>
+                        <div class="msm-module-description">Car share & short-term rental services management.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">03. DIGITAL DEALERSHIP</div>
+                        <div class="msm-module-description">For vehicle purchasing and trade-in services purpose.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">04. LOANER MANAGEMENT</div>
+                        <div class="msm-module-description">Loaner car management and booking services.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container msm-container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mb-4">Full Visibilities</h2>
+                <ul class="msm-module-list">
+                    <li>
+                        <div class="msm-module-title">01. GOD's VIEW VEHICLE TRACKING</div>
+                        <div class="msm-module-description">Monthly all-inclusive car subscription management.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">02. VIRTUAL GARAGE</div>
+                        <div class="msm-module-description">Car share & short-term rental services management.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">03. IFTA</div>
+                        <div class="msm-module-description">For vehicle purchasing and trade-in services purpose.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">04. CSA INSIGHTS</div>
+                        <div class="msm-module-description">Loaner car management and booking services.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/images/full_visibilities_ca.jpg" class="img-fluid" alt="Multi-Service Modules Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="container msm-container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/static/images/simplify_fleet_ca.png" class="img-fluid" alt="Multi-Service Modules Image">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4">Simplify Fleet Maintenance</h2>
+                <ul class="msm-module-list">
+                    <li>
+                        <div class="msm-module-title">01. PREVENTIVE FLEET MAINTENANCE</div>
+                        <div class="msm-module-description">Monthly all-inclusive car subscription management.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">02. MAINTENANCE HISTORY REPORT</div>
+                        <div class="msm-module-description">Car share & short-term rental services management.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">03. LIVE VIDEO INSPECTION</div>
+                        <div class="msm-module-description">For vehicle purchasing and trade-in services purpose.</div>
+                    </li>
+                    <li>
+                        <div class="msm-module-title">04. VEHICLE HEALTH DETAILS</div>
+                        <div class="msm-module-description">Loaner car management and booking services.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="ef-effectiveness-section">
+        <h2>EFFECTIVENESS OF ONE-STOP FLEET MANAGEMENT</h2>
+        <p>Connect, automate, and manage physical operations with a fully integrated product suite. SHIFT combines ease of use with constantly evolving features to help you stay ahead.</p>
+        <div class="ef-statistics">
+            <div class="ef-stat-card">
+                <div class="ef-stat-circle">
+                    <span>56%</span>
+                </div>
+                <h3>Get Full Fleet Visibility</h3>
+                <p>Less time spent tracking vehicles and assets. Manage your vehicles, drivers with SHIFT Integrated Operations Platform.</p>
+            </div>
+            <div class="ef-stat-card">
+                <div class="ef-stat-circle">
+                    <span>42%</span>
+                </div>
+                <h3>Increase in Asset Utilization</h3>
+                <p>Less time spent tracking vehicles and assets. Manage your vehicles, drivers with SHIFT Integrated Operations Platform.</p>
+            </div>
+            <div class="ef-stat-card">
+                <div class="ef-stat-circle">
+                    <span>80%</span>
+                </div>
+                <h3>Boost Productivity</h3>
+                <p>Less time spent tracking vehicles and assets. Manage your vehicles, drivers with SHIFT Integrated Operations Platform.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

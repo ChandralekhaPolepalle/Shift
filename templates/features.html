@@ -1,14 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features Section</title>
-    <link rel="stylesheet" href="static/css/features.css">
+    <title>Features</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="static/css/features.css" rel="stylesheet">
+    <style>
+        /* Updated styles for tabs */
+        .pf-nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            padding: 20px 0;
+        }
+
+        .pf-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .pf-nav ul li {
+            margin: 0 15px;
+        }
+
+        .pf-nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .pf-nav ul li.pf-active a,
+        .pf-nav ul li a:hover {
+            border-bottom: 2px solid #007bff;
+        }
+
+        .pf-nav ul li.pf-active a {
+            font-weight: bold;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pf-tab-content {
+            display: none;
+        }
+
+        .pf-tab-content.active {
+            display: block;
+        }
+
+        .pf-carousel {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .pf-carousel-slide {
+            display: none;
+        }
+
+        .pf-carousel-slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .pf-carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .pf-carousel-controls span {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .pf-features {
+            padding: 40px 20px;
+        }
+
+        .pf-features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .pf-feature-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pf-feature-card {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pf-feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pf-feature-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .pf-feature-card button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pf-feature-card button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .pf-feature-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pf-feature-card {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <section class="features-section">
+    <header class="pf-nav">
+        <ul>
+            <li class="pf-active" data-tab="tab1"><a href="#">Admin Portal</a></li>
+            <li data-tab="tab2"><a href="#">Application</a></li>
+            <li data-tab="tab3"><a href="#">Hardware</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div id="tab1" class="pf-tab-content active">
+            <section class="pf-carousel">
+                <div class="pf-carousel-slide active">
+                    <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
+                </div>
+                <div class="pf-carousel-slide">
+                    <img src="admin_portal_slide2.jpg" alt="Admin Portal Slide 2">
+                </div>
+                <div class="pf-carousel-controls">
+                    <span onclick="changeSlide(-1)">&#10094;</span>
+                    <span onclick="changeSlide(1)">&#10095;</span>
+                </div>
+            </section>
+            <section class="features-section">
+        <h2>Features<span class="subtitle">. to meet the unique needs of your business</span></h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Fleet Management</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-brain"></i>
+                <h3>Maintenance Management</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>God's view Fleet Tracking</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-car"></i>
+                <h3>Verity Module Components</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-car"></i>
+                <h3>Admin Authorization</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-car"></i>
+                <h3>Virtual Garage</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-car"></i>
+                <h3>Finance Management</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-car"></i>
+                <h3>ELD, IFTA & CSA Insights</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+        </div>
+    </section>
+        </div>
+        <div id="tab2" class="pf-tab-content">
+            <section class="pf-carousel">
+                <div class="pf-carousel-slide active">
+                    <img src="application_slide1.jpg" alt="Application Slide 1">
+                </div>
+                <div class="pf-carousel-slide">
+                    <img src="application_slide2.jpg" alt="Application Slide 2">
+                </div>
+                <div class="pf-carousel-controls">
+                    <span onclick="changeSlide(-1)">&#10094;</span>
+                    <span onclick="changeSlide(1)">&#10095;</span>
+                </div>
+            </section>
+            <section class="features-section">
+        <h2>Features<span class="subtitle">. to meet the unique needs of your business</span></h2>
+        <div class="features-container">
+
+            <div class="feature-card ">
+                <i class="fas fa-tasks"></i>
+                <h3>Order Modules</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card ">
+                <i class="fas fa-brain"></i>
+                <h3>Intelligent Route Planning</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card ">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Productive Maintenance</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card ">
+                <i class="fas fa-car"></i>
+                <h3>Vehicle Health Self-detector</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-car"></i>
+                <h3>Vehicle Value Estimating</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card ">
+                <i class="fas fa-car"></i>
+                <h3>Payment Management</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card ">
+                <i class="fas fa-car"></i>
+                <h3>Car Loan Calculator</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            <div class="feature-card ">
+                <i class="fas fa-car"></i>
+                <h3>Request Arrangement</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+
+
+        </div>
+    </section>
+        </div>
+        <div id="tab3" class="pf-tab-content">
+            <section class="pf-carousel">
+                <div class="pf-carousel-slide active">
+                    <img src="hardware_slide1.jpg" alt="Hardware Slide 1">
+                </div>
+                <div class="pf-carousel-slide">
+                    <img src="hardware_slide2.jpg" alt="Hardware Slide 2">
+                </div>
+                <div class="pf-carousel-controls">
+                    <span onclick="changeSlide(-1)">&#10094;</span>
+                    <span onclick="changeSlide(1)">&#10095;</span>
+                </div>
+            </section>
+            <section class="features-section">
         <h2>Features<span class="subtitle">. to meet the unique needs of your business</span></h2>
         <div class="features-container">
             <div class="feature-card">
@@ -33,5 +324,46 @@
             </div>
         </div>
     </section>
+        </div>
+    </main>
+
+    <script>
+        function changeTab(tabId) {
+            document.querySelectorAll('.pf-tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+
+            document.querySelectorAll('.pf-nav ul li').forEach(tab => {
+                tab.classList.remove('pf-active');
+            });
+            document.querySelector(`[data-tab="${tabId}"]`).classList.add('pf-active');
+        }
+
+        document.querySelectorAll('.pf-nav ul li').forEach(tab => {
+            tab.addEventListener('click', function (event) {
+                event.preventDefault();
+                changeTab(this.getAttribute('data-tab'));
+            });
+        });
+
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.pf-carousel-slide');
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            slides[slideIndex].style.display = 'block';
+        }
+    </script>
 </body>
+
 </html>
