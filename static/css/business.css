@@ -1,20 +1,18 @@
-/* Global Styles */
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #0b0d18;
+    background-color: #000;
     color: white;
 }
 
-/* Businesses Across Industries Styles with Prefixes */
 .bai-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 40px 20px;
-    background-color: #0b0d18; /* Ensure it matches the global background */
+    background-color: #000;
 }
 
 .bai-content {
@@ -81,9 +79,10 @@ body, html {
     font-size: 1.5em;
     margin: 10px 0;
     position: absolute;
-    top: 50%;
+    padding: 5px 10px;
     left: 50%;
-    transform: translate(0%, 100%);
+    bottom:10px;
+    transform: translate(-50%);
 }
 
 .bai-carousel-controls {
@@ -105,6 +104,7 @@ body, html {
 
 .bai-arrow-left {
     margin-right: 10px;
+    margin-left:200px;
 }
 
 .bai-arrow-right {
