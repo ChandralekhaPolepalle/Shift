@@ -39,6 +39,10 @@ def pAdminPortal():
 def pCustomerApp():
     return render_template('p_customer_app.html')
 
+@app.route('/navBar')
+def navBar():
+    return render_template('navbar.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

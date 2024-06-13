@@ -1,0 +1,91 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    height: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #000;
+}
+
+.navbar-logo img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    transition: width 0.3s ease;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    line-height: 40px;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link {
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+    border: none;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: #495057;
+}
+
+.navbar-toggler {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.signup {
+    padding-top: 0.10%;
+    padding-bottom: 0.10%;
+}
+
+.search-container {
+    display: none;
+    margin-top: 10px;
+    position: relative;
+}
+
+.search-box {
+    display: block;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 1px;
+    margin-top:-2%;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.search-box input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 3px;
+    flex-grow: 1;
+}
+
+.search-box i {
+    padding: 5px;
+    cursor: pointer;
+    color: #666;
+}

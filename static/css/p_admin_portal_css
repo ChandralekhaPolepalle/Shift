@@ -5,63 +5,6 @@ body
     font-family: Arial, sans-serif;
 }
 
-.navbar {
-    height: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color:#000;
-}
-
-.navbar-logo img {
-    max-width: 100%;
-    height: auto;
-    width: 150px;
-    transition: width 0.3s ease;
-}
-
-.navbar .navbar-brand,
-.navbar .nav-link {
-    line-height: 40px;
-}
-
-.navbar-brand img{
-    max-width: 100%;
-    height: auto;
-    width: 150px;
-    transition: width 0.3s ease;
-}
-
-.navbar .nav-link {
-    color: white;
-}
-
-.dropdown-menu {
-    background-color: #343a40;
-    border: none;
-}
-
-.dropdown-item {
-    color: #fff;
-}
-
-.dropdown-item:hover {
-    background-color: #495057;
-}
-
-.navbar-toggler {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.navbar-nav {
-    margin: auto;
-}
-
-.signup{
-    padding-top:0.10%;
-    padding-bottom:0.10%;
-}
-
 .main-content {
     background-size: cover;
     background-position: center;
@@ -77,6 +20,7 @@ body
 .main-content-text {
     max-width: 465px;
     text-align:left;
+    font-family: Archivo;
 
 }
 .main-content .row .col-6{

@@ -15,69 +15,17 @@
     <link href="static/css/home.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg  bg-black" >
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="\static\images\logo.png" alt="Shift">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown ml-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Products
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="productsDropdown">
-                            <a class="dropdown-item" href="#">Product 1</a>
-                            <a class="dropdown-item" href="#">Product 2</a>
-                            <a class="dropdown-item" href="#">Product 3</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown ml-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Solutions
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown">
-                            <a class="dropdown-item" href="#">Solution 1</a>
-                            <a class="dropdown-item" href="#">Solution 2</a>
-                            <a class="dropdown-item" href="#">Solution 3</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown ml-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="technologiesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Technologies
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="technologiesDropdown">
-                            <a class="dropdown-item" href="#">Technology 1</a>
-                            <a class="dropdown-item" href="#">Technology 2</a>
-                            <a class="dropdown-item" href="#">Technology 3</a>
-                        </div>
-                    </li>
-                    <li class="nav-item ml-3">
-                        <a class="nav-link" href="#">News</a>
-                    </li>
-                    <li class="nav-item ml-3">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-             <a class="nav-link" href="#"><i class="fas fa-search" id="searchIcon"></i></a>
-             <a class="nav-link btn btn-primary text-white ml-3 signup" href="#">Sign Up</a>
-        </div>
-    </nav>
+    {% include 'navbar.html' %}
 
    <!-- Main content -->
 
     <div class="main-content">
         <div class="row">
         <div class="main-content-text col-6" style="margin-left:40%; max-width:30%;">
-            <p>Products > Fleet Management & Optimization Admin Portal</p>
-            <h5>FLEET MANAGEMENT & OPTIMIZATION </h5>
-            <h1> ADMIN PORTAL</h1>
-            <p>Connect, automate, and manage physical operations with a fully integrated product suite. SHIFT combines ease of use with constantly evolving features to help you stay ahead.</p>
+            <p style="margin-top:-20%;margin-bottom:15%;font-size:14px;">Products > Fleet Management & Optimization Admin Portal</p>
+            <h5 style="font-size:26px;">FLEET MANAGEMENT & OPTIMIZATION </h5>
+            <h1 style="font-size:72px;"> ADMIN PORTAL</h1>
+            <p style="font-size:16px;">Connect, automate, and manage physical operations with a fully integrated product suite. SHIFT combines ease of use with constantly evolving features to help you stay ahead.</p>
         </div>
 
         <div class="col-2">
