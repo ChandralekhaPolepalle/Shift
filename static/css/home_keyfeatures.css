@@ -21,6 +21,8 @@ body, html {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-left:7%;
+    margin-right:7%;
 }
 
 .hkf-feature {

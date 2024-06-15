@@ -13,12 +13,15 @@ body, html {
     align-items: center;
     padding: 40px 20px;
     background-color: #000;
+    margin-left:7%;
+    margin-right:7%;
 }
 
 .bai-content {
     flex: 1;
     max-width: 40%;
     text-align: left;
+    position: relative;
 }
 
 .bai-title {
@@ -69,10 +72,13 @@ body, html {
     flex: 1;
     min-width: 300px;
     text-align: center;
+    position: relative;
 }
 
 .bai-carousel-item img {
     width: 100%;
+    height:100%;
+
 }
 
 .bai-carousel-item-title {
@@ -81,8 +87,10 @@ body, html {
     position: absolute;
     padding: 5px 10px;
     left: 50%;
-    bottom:10px;
+    bottom: 10px;
     transform: translate(-50%);
+    color: white;
+    border-radius: 4px;
 }
 
 .bai-carousel-controls {
@@ -90,6 +98,10 @@ body, html {
     justify-content: space-between;
     width: 0%;
     margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
 }
 
 .bai-arrow {
@@ -104,7 +116,6 @@ body, html {
 
 .bai-arrow-left {
     margin-right: 10px;
-    margin-left:200px;
 }
 
 .bai-arrow-right {

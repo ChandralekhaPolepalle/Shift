@@ -8,143 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="static/css/navbar.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar {
-            height: 80px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            background-color: #000;
-        }
-
-        .navbar-logo img {
-            max-width: 100%;
-            height: auto;
-            width: 150px;
-            transition: width 0.3s ease;
-        }
-
-        .navbar .navbar-brand,
-        .navbar .nav-link {
-            line-height: 40px;
-        }
-
-        .navbar-brand img {
-            max-width: 100%;
-            height: auto;
-            width: 150px;
-            transition: width 0.3s ease;
-        }
-
-        .navbar .nav-link {
-            color: white;
-        }
-
-        .dropdown-menu {
-            background-color: #000;
-            border-top: 3px solid #2860E1;
-            width: 100vw;
-            left: 0;
-            right: 0;
-        }
-
-        .dropdown-item {
-            color: #fff;
-        }
-
-        .dropdown-item:hover {
-            background-color: #495057;
-            overlay: #2860E1;
-        }
-
-        .navbar-toggler {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .navbar-nav {
-            margin: auto;
-        }
-
-        .signup {
-            padding-top: 0.10%;
-            padding-bottom: 0.10%;
-        }
-
-        .search-container {
-            display: none;
-            margin-top: 10px;
-            position: relative;
-        }
-
-        .search-box {
-            display: block;
-            align-items: center;
-            border: 1px solid #ccc;
-            padding: 1px;
-            margin-top: -2%;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-
-        .search-box input[type="text"] {
-            border: none;
-            outline: none;
-            padding: 3px;
-            flex-grow: 1;
-        }
-
-        .search-box i {
-            padding: 5px;
-            cursor: pointer;
-            color: #666;
-        }
-
-        .navbar-nav .dropdown:hover .dropdown-menu {
-            display: flex;
-            margin-top: 0;
-        }
-
-        .dropdown-menu .dropdown-columns {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-            margin-left:-25%;
-        }
-
-        .dropdown-columns .column {
-            flex: 1;
-            padding: 10px;
-            color: #fff;
-        }
-
-        .dropdown-columns .column:not(:last-child) {
-            border-right: 1px solid #495057;
-        }
-
-        .nav-item.active .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: -25%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #2860E1;
-        }
-
-        .dropdown-item i {
-            margin-right: 10px;
-        }
-    </style>
+    <link href="static/css/navbar.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-black">
@@ -164,7 +28,11 @@
                         <div class="dropdown-menu" aria-labelledby="productsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column">
-                                    <h5>SHIFT AI Algorithms</h5>
+                                    <div class="image-overlay"></div>
+                                    <img src="/static/images/product.png" class="img-fluid" alt="Dropdown Image" style="max-width: 100%;">
+                                </div>
+                                <div class="column">
+                                    <h5>AI Powered SaaS Products</h5>
                                     <a class="dropdown-item" href="#"><i class="fas fa-camera"></i>AI Camera Inspection</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>Predictive Maintenance</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-car-crash"></i>Collision Detection</a>
@@ -178,9 +46,7 @@
                                     <a class="dropdown-item" href="#"><i class="fas fa-handshake"></i>Integration Partners</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-code"></i>Developer Portal APIs</a>
                                 </div>
-                                <div class="column">
-                                    <img src="/path/to/your/image.png" alt="Dropdown Image" style="max-width: 100%;">
-                                </div>
+
                             </div>
                         </div>
                     </li>
@@ -191,6 +57,10 @@
                         <div class="dropdown-menu" aria-labelledby="solutionsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column">
+                                    <div class="image-overlay"></div>
+                                    <img src="/static/images/solution.jfif" class="img-fluid" alt="Dropdown Image" style="max-width: 100%;">
+                                </div>
+                                <div class="column">
                                     <h5>SHIFT AI Algorithms</h5>
                                     <a class="dropdown-item" href="#"><i class="fas fa-camera"></i>AI Camera Inspection</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>Predictive Maintenance</a>
@@ -205,9 +75,7 @@
                                     <a class="dropdown-item" href="#"><i class="fas fa-handshake"></i>Integration Partners</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-code"></i>Developer Portal APIs</a>
                                 </div>
-                                <div class="column">
-                                    <img src="/path/to/your/image.png" alt="Dropdown Image" style="max-width: 100%;">
-                                </div>
+
                             </div>
                         </div>
                     </li>
@@ -218,6 +86,10 @@
                         <div class="dropdown-menu" aria-labelledby="technologiesDropdown">
                             <div class="dropdown-columns">
                                 <div class="column">
+                                    <div class="image-overlay"></div>
+                                    <img src="/static/images/technologies.jfif" class="img-fluid" alt="Dropdown Image" style="max-width: 100%;">
+                                </div>
+                                <div class="column">
                                     <h5>SHIFT AI Algorithms</h5>
                                     <a class="dropdown-item" href="#"><i class="fas fa-camera"></i>AI Camera Inspection</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>Predictive Maintenance</a>
@@ -232,17 +104,12 @@
                                     <a class="dropdown-item" href="#"><i class="fas fa-handshake"></i>Integration Partners</a>
                                     <a class="dropdown-item" href="#"><i class="fas fa-code"></i>Developer Portal APIs</a>
                                 </div>
-                                <div class="column">
-                                    <img src="/path/to/your/image.png" alt="Dropdown Image" style="max-width: 100%;">
-                                </div>
+
                             </div>
                         </div>
                     </li>
                     <li class="nav-item ml-3">
-                        <a class="nav-link" href="#">News</a>
-                    </li>
-                    <li class="nav-item ml-3">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="#">Resources</a>
                     </li>
                 </ul>
             </div>
@@ -253,10 +120,22 @@
                     <i class="fas fa-search" id="searchSubmit"></i>
                 </div>
             </div>
-            <a class="nav-link btn btn-primary text-white ml-3 signup" href="#">Sign Up</a>
+            <div class="signup">
+                <button class="btn btn-outline-primary my-2 my-sm-0">Sign up</button>
+            </div>
+
         </div>
     </nav>
 
+    <script>
+        $(document).ready(function() {
+            $('.dropdown').hover(function() {
+                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300);
+            }, function() {
+                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300);
+            });
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('searchContainer').style.display = 'none';
@@ -265,7 +144,7 @@
                 var searchContainer = document.getElementById('searchContainer');
                 if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
                     searchContainer.style.display = 'block';
-                    searchIcon.style.display = 'none';
+                    searchIcon.style.display='none';
                 } else {
                     searchContainer.style.display = 'none';
                 }

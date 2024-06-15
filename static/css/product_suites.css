@@ -2,7 +2,7 @@
 body, html {
 
     font-family: 'Archivo', sans-serif;
-    background-color: #121212;
+    background-color: #000;
     color: white;
 }
 
@@ -100,7 +100,7 @@ body, html {
 }
 
 .ps-product-content .ps-text-container .ps-learn-more:hover {
-    background-color: #1e4aa1;
+    background-color: #000;
 }
 
 @media (max-width: 768px) {

@@ -1,30 +1,26 @@
-body
-{
+body {
     background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
+    margin-left: 10%;
 }
 
 .main-content {
-    background-size: cover;
-    background-position: center;
-    height: calc(100vh - 80px);
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: left;
-    margin-left:-53%;
+    justify-content: space-between;
+    height: calc(100vh - 80px);
+    padding: 0 20px; /* Adjust padding as needed */
+    overflow: hidden;
 }
-
-
 
 .main-content-text {
     max-width: 400px;
-    text-align:left;
+    margin-left:7%;
+    margin-right:7%;
 }
 
-.main-content h5{
+.main-content h5 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -39,7 +35,8 @@ body
     margin-bottom: 2rem;
 }
 
-.btn-custom {
+.btn-custom,
+.btn-see-more {
     background-color: #007bff;
     color: white;
     padding: 0.75rem 1.5rem;
@@ -48,35 +45,43 @@ body
     border-radius: 0.25rem;
     text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s;
-}
-
-.btn-custom:hover {
-    color:white;
-    font-size:105%;
-    text-decoration:none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-see-more {
     background-color: transparent;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    margin: 0.5rem;
-    border: none;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: color 0.3s;
-    font-size: 1rem;
 }
 
+.btn-custom:hover,
 .btn-see-more:hover {
-    color:white;
-    opacity:0.5;
-    text-decoration:none;
+    color: white;
+    text-decoration: none;
+}
+
+.image-container {
+    position: relative;
+    flex-shrink: 0; /* Prevent image from growing */
+    width: 50%; /* Adjust width as needed */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .footer {
+    margin-left:7%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
