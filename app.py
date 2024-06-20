@@ -43,6 +43,9 @@ def pCustomerApp():
 def navBar():
     return render_template('navbar.html')
 
+@app.route('/fleetManagement')
+def fleetManagement():
+    return render_template('fleet_management.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

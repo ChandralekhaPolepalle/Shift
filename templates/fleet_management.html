@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Management Solution</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        #animation-section {
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .layer-container {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .layer {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(40, 96, 225, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .layer:hover {
+            background-color: rgba(40, 96, 225, 1);
+        }
+
+        .layer:nth-child(1) {
+            top: 0;
+        }
+
+        .layer:nth-child(2) {
+            top: 50px;
+        }
+
+        .layer:nth-child(3) {
+            top: 100px;
+        }
+
+        .layer:nth-child(4) {
+            top: 150px;
+        }
+
+        .layer:nth-child(5) {
+            top: 200px;
+        }
+
+        .layer:nth-child(6) {
+            top: 250px;
+        }
+
+        .module {
+            position: absolute;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .module-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #2860E1;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
+
+        .module p {
+            margin: 10px 0;
+        }
+
+        .module ul {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .module:hover ul {
+            display: block;
+        }
+
+        .scroll-down {
+            margin-top: 50px;
+            font-size: 18px;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        .scroll-down p {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .in-selected {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .mouse-hover {
+            transform: scale(1.1);
+        }
+
+        .in-active {
+            opacity: 0.5;
+        }
+
+        #driver-app {
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+        }
+
+        #customer-app {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #agent-app {
+            top: 50%;
+            left: 75%;
+            transform: translate(-50%, -50%);
+        }
+
+        #admin-portal {
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #subscription {
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center text-light" id="animation-section">
+        <h1>How SHIFT Fleet Management Solution Works</h1>
+        <div class="layer-container">
+            <div class="layer">Inventory Management</div>
+            <div class="layer">Short-term Rental</div>
+            <div class="layer">Loaner Management</div>
+            <div class="layer">Digital Dealership</div>
+            <div class="layer">Telematics & Digital Key</div>
+        </div>
+        <div class="module" id="admin-portal">
+            <div class="module-icon"></div>
+            <p>Admin Portal</p>
+            <ul>
+                <li>Inventory Management</li>
+                <li>Subscription Model</li>
+                <li>License Management</li>
+                <li>Portal Dashboard</li>
+                <li>Telematics Digital Key</li>
+            </ul>
+        </div>
+        <div class="module in-active" id="driver-app">
+            <div class="module-icon"></div>
+            <p>Driver App</p>
+            <ul>
+                <li>Browsing Subscription Plan</li>
+                <li>Browsing Vehicle</li>
+                <li>Package Car</li>
+                <li>Book Order Car</li>
+                <li>Book Service Time</li>
+                <li>Purchase Vehicle</li>
+                <li>Multi Payment</li>
+                <li>Cashless</li>
+            </ul>
+        </div>
+        <div class="module in-active" id="customer-app">
+            <div class="module-icon"></div>
+            <p>Customer App</p>
+            <ul>
+                <li>Browsing Subscription Plan</li>
+                <li>Browsing Vehicle</li>
+                <li>Package Car</li>
+                <li>Book Order Car</li>
+                <li>Book Service Time</li>
+                <li>Purchase Vehicle</li>
+                <li>Multi Payment</li>
+                <li>Cashless</li>
+            </ul>
+        </div>
+        <div class="module in-active" id="agent-app">
+            <div class="module-icon"></div>
+            <p>Agent App</p>
+            <ul>
+                <li>Vehicle Gallery</li>
+                <li>Vehicle Maintenance</li>
+                <li>Inventory Management</li>
+                <li>Portal Dashboard</li>
+                <li>Vehicle Swap</li>
+            </ul>
+        </div>
+        <div class="module" id="subscription">
+            <div class="module-icon"></div>
+            <p>Subscription</p>
+        </div>
+        <div class="scroll-down">
+            <p>Scroll down to expand details</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.module').hover(function() {
+                $(this).toggleClass('mouse-hover');
+            });
+
+            $('.module').click(function() {
+                $('.module').removeClass('in-selected').addClass('in-active');
+                $(this).removeClass('in-active').addClass('in-selected');
+            });
+        });
+    </script>
+</body>
+</html>
