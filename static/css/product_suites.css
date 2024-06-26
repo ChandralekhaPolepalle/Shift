@@ -63,7 +63,6 @@ body, html {
 .ps-product-content .ps-image-container img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
 }
 
 .ps-product-content .ps-text-container {
@@ -100,7 +99,9 @@ body, html {
 }
 
 .ps-product-content .ps-text-container .ps-learn-more:hover {
-    background-color: #000;
+    color: white;
+    text-decoration: none;
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
