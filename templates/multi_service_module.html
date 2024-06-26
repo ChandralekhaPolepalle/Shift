@@ -125,6 +125,7 @@
             font-size: 1.5rem;
             color: #007bff;
         }
+
     </style>
 </head>
 <body class="msm-body">
@@ -245,8 +246,23 @@
         </div>
     </section>
 
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const progressValue = 56; // Change this value to update the progress
+    const progressCircle = document.getElementById('progress-circle');
+    const progressText = document.getElementById('progress-value');
+
+    progressCircle.style.background = `conic-gradient(
+        #00f 0% ${progressValue}%,
+        #444 ${progressValue}% 100%
+    )`;
+
+    progressText.textContent = `${progressValue}%`;
+});
+</script>
 </body>
 </html>

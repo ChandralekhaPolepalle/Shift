@@ -8,7 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="static/css/navbar.css" rel="stylesheet">
-    <link href="static/css/navbar.css" rel="stylesheet">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-black">
@@ -27,24 +27,21 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="productsDropdown">
                             <div class="dropdown-columns">
-                                <div class="column">
-                                    <div class="image-overlay"></div>
-                                    <img src="/static/images/product.png" class="img-fluid" alt="Dropdown Image" style="max-width: 100%;">
-                                </div>
+
                                 <div class="column">
                                     <h5>AI Powered SaaS Products</h5>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-camera"></i>AI Camera Inspection</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>Predictive Maintenance</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-car-crash"></i>Collision Detection</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-map-signs"></i>Intelligent Route Planning</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-route"></i>Changer Route Planning</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-camera"></i>Fleet Management & Optimization Admin Portal</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>White-Label Customer App</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-car-crash"></i>Agent Operational App</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-map-signs"></i>White-Label Driver App</a>
+
                                 </div>
                                 <div class="column">
-                                    <h5>SHIFT Technologies</h5>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-satellite"></i>Telematics</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-key"></i>Digital Key</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-handshake"></i>Integration Partners</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-code"></i>Developer Portal APIs</a>
+                                    <h5>View All</h5>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-satellite"></i>ELD compliance IFTA Reporting & CSA Insights</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-key"></i>AI Dash-cam</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-handshake"></i>Tracking & Telematics</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-code"></i>Digital Key & Remote Authorization</a>
                                 </div>
 
                             </div>
@@ -113,17 +110,18 @@
                     </li>
                 </ul>
             </div>
-            <a class="nav-link" href="#"><i class="fas fa-search" id="searchIcon"></i></a>
-            <div class="search-container" id="searchContainer">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <i class="fas fa-search" id="searchSubmit"></i>
-                </div>
-            </div>
+<!--            <a class="nav-link" href="#"><i class="fas fa-search" id="searchIcon"></i></a>-->
+<!--            <div class="search-container" id="searchContainer">-->
+<!--                <div class="search-box">-->
+<!--                    <input type="text" id="searchInput" placeholder="Search...">-->
+<!--                    <i class="fas fa-search" id="searchSubmit"></i>-->
+<!--                </div>-->
+<!--            </div>-->
+             <a href="#subscribe-container">
             <div class="signup">
                 <button class="btn btn-outline-primary my-2 my-sm-0">Sign up</button>
             </div>
-
+            </a>
         </div>
     </nav>
 
@@ -135,8 +133,7 @@
                 $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300);
             });
         });
-    </script>
-    <script>
+
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('searchContainer').style.display = 'none';
 

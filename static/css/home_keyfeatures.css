@@ -29,7 +29,6 @@ body, html {
     overflow: hidden;
     flex: 1;
     max-width: 500px;
-    border-radius: 8px;
     overflow: hidden;
     margin: 10px;
 }
@@ -37,7 +36,11 @@ body, html {
 .hkf-feature img {
     width: 584px;
     height: 370px;
-
+}
+.hkf-feature img:hover {
+    overlay:#000;
+    opacity:0.5;
+}
 .hkf-feature h3 {
     font-size: 1.5em;
     margin: 10px;
