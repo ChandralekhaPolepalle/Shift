@@ -27,6 +27,22 @@ body
     max-width: 800px;
 
 }
+.main-content-text:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.main-content-text h5,
+.main-content-text h1,
+.main-content-text p {
+    transition: opacity 0.3s;
+}
+
+.main-content-text:hover h5,
+.main-content-text:hover h1,
+.main-content-text:hover p {
+    opacity: 0.8;
+}
 
 .main-content h5 {
     font-size: 1.5rem;

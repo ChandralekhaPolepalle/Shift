@@ -15,38 +15,59 @@
         }
 
         .pf-nav {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+        }
+
+        .pf-tabs {
+            list-style-type: none;
             display: flex;
             justify-content: center;
-            background-color: #000;
-            padding: 20px 0;
-        }
-
-        .pf-nav ul {
-            list-style: none;
+            gap: 10%;
             padding: 0;
             margin: 0;
-            display: flex;
         }
 
-        .pf-nav ul li {
-            margin: 0 15px;
+        .pf-tabs li {
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .pf-nav ul li a {
+        .pf-tabs li a {
             text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid transparent;
-        }
-
-        .pf-nav ul li.pf-active a,
-        .pf-nav ul li a:hover {
-            border-bottom: 2px solid #007bff;
-        }
-
-        .pf-nav ul li.pf-active a {
+            color: white;
+            font-size: 1em;
+            position: relative;
+            z-index: 1;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .pf-tabs li:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #2860E1;
+            transition: width 0.3s ease;
+        }
+
+        .pf-tabs li.ps-active:before,
+        .pf-tabs li:hover:before {
+            width: 100%;
+        }
+
+        .pf-tabs li:hover a {
+            color: #2860E1;
+        }
+
+        .pf-tabs li.pf-active a {
+            color: #2860E1;
         }
 
 
@@ -68,7 +89,7 @@
 
         .pf-carousel {
             position: relative;
-            max-width: 1200px;
+            max-width: 90%;
             margin: auto;
         }
 
@@ -91,9 +112,9 @@
         }
 
         .pf-carousel-controls span {
-            background-color: rgba(0, 0, 0, 0.5);
+
             padding: 10px;
-            border-radius: 50%;
+
             cursor: pointer;
         }
 
@@ -150,6 +171,7 @@
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
+
         }
 
         .text-overlay h1 {
@@ -163,6 +185,55 @@
             color:#fff;
             opacity:70%;
         }
+        .img-overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+
+        .img-overlay img {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+        }
+
+        .pf-carousel-slide img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .pf-carousel-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .pf-carousel-controls span {
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .pf-carousel-controls span:hover {
+            transform: scale(1.1);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .pf-carousel-controls span:hover {
+            animation: bounce 0.6s;
+        }
+
+
         @media (max-width: 768px) {
             .pf-feature-card {
                 width: calc(50% - 20px);
@@ -173,23 +244,39 @@
             .pf-feature-card {
                 width: 100%;
             }
+            .text-overlay {
+                top: 20%;
+            }
+
+            .text-overlay h1 {
+                font-size: 0.8rem;
+            }
+
+            .text-overlay p {
+                font-size: 0.4rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <header class="pf-nav">
-        <ul>
+        <nav>
+        <ul class="pf-tabs">
             <li class="pf-active" data-tab="tab1"><a href="#">Admin Portal</a></li>
             <li data-tab="tab2"><a href="#">Application</a></li>
             <li data-tab="tab3"><a href="#">Hardware</a></li>
         </ul>
+        </nav>
     </header>
 
     <main>
         <div id="tab1" class="pf-tab-content active">
             <section class="pf-carousel">
                 <div class="pf-carousel-slide active">
+                    <div class="img-overlay">
+                      <img src="\static\images\macbook.png" alt="Overlay Image">
+                    </div>
                     <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
                         <h1>All-In-One Admin Portal</h1>
@@ -197,7 +284,14 @@
                     </div>
                 </div>
                 <div class="pf-carousel-slide">
-                    <img src="admin_portal_slide2.jpg" alt="Admin Portal Slide 2">
+                    <div class="img-overlay">
+                      <img src="\static\images\macbook.png" alt="Overlay Image">
+                    </div>
+                    <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
+                    <div class="text-overlay">
+                        <h1>All-In-One Admin Portal</h1>
+                        <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
+                    </div>
                 </div>
                 <div class="pf-carousel-controls">
                     <span onclick="changeSlide(-1)">&#10094;</span>
@@ -268,20 +362,21 @@
         </div>
         <div id="tab2" class="pf-tab-content">
             <section class="pf-carousel">
-                <div class="pf-carousel-slide active">
-                    <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
+                <div class="pf-carousel-slide">
+                    <div class="img-overlay">
+                      <img src="\static\images\macbook.png" alt="Overlay Image" >
+
+                    </div>
+                    <img src="\static\images\application_bg.png" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
                         <h1>White-label Customer App</h1>
                         <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
                     </div>
                 </div>
-                <div class="pf-carousel-slide">
-                    <img src="application_slide2.jpg" alt="Application Slide 2">
-                </div>
                 <div class="pf-carousel-controls">
                     <span onclick="changeSlide(-1)">&#10094;</span>
                     <span onclick="changeSlide(1)">&#10095;</span>
-                </div>
+                </div>text
             </section>
             <section class="features-section">
         <h2>Features<span class="subtitle">. to meet the unique needs of your business</span></h2>
@@ -352,14 +447,22 @@
         <div id="tab3" class="pf-tab-content">
             <section class="pf-carousel">
                 <div class="pf-carousel-slide active">
-                    <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
+
+                    <img src="\static\images\hardware.png" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
                         <h1>Agent Operational App</h1>
                         <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
                     </div>
                 </div>
                 <div class="pf-carousel-slide">
-                    <img src="hardware_slide2.jpg" alt="Hardware Slide 2">
+                    <div class="img-overlay">
+                      <img src="\static\images\macbook.png" alt="Overlay Image">
+                    </div>
+                    <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
+                    <div class="text-overlay">
+                        <h1>All-In-One Admin Portal</h1>
+                        <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
+                    </div>
                 </div>
                 <div class="pf-carousel-controls">
                     <span onclick="changeSlide(-1)">&#10094;</span>
@@ -405,7 +508,7 @@
     </main>
 
     <script>
-        function changeTab(tabId) {
+                function changeTab(tabId) {
             document.querySelectorAll('.pf-tab-content').forEach(content => {
                 content.classList.remove('active');
             });
@@ -415,6 +518,29 @@
                 tab.classList.remove('pf-active');
             });
             document.querySelector(`[data-tab="${tabId}"]`).classList.add('pf-active');
+
+            // Reset the slides for the newly active tab
+            let slides = document.querySelectorAll(`#${tabId} .pf-carousel-slide`);
+            slides.forEach((slide, index) => {
+                slide.style.display = index === 0 ? 'block' : 'none';
+            });
+            slideIndex = 0;
+        }
+
+        let slideIndex = 0;
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.pf-tab-content.active .pf-carousel-slide');
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            slides[slideIndex].style.display = 'block';
         }
 
         document.querySelectorAll('.pf-nav ul li').forEach(tab => {
@@ -424,22 +550,11 @@
             });
         });
 
-        let slideIndex = 0;
-        showSlides(slideIndex);
+        // Initialize the first tab's carousel slides
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlides(slideIndex);
+        });
 
-        function changeSlide(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let slides = document.querySelectorAll('.pf-carousel-slide');
-            if (n >= slides.length) { slideIndex = 0; }
-            if (n < 0) { slideIndex = slides.length - 1; }
-            slides.forEach(slide => {
-                slide.style.display = 'none';
-            });
-            slides[slideIndex].style.display = 'block';
-        }
     </script>
 </body>
 
