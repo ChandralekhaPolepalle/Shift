@@ -20,14 +20,40 @@
             padding-bottom: 10%;
             padding-left:initial;
         }
+
+
+
         .msm-module-list li {
             padding: 15px 0;
             border-bottom: 1px solid #333;
             font-size: 18px;
+            transition: background 0.3s ease, transform 0.3s ease, border-left 0.3s ease;
+            position: relative;
         }
-        .msm-module-list li:last-child {
-            border-bottom: none;
+
+        .msm-module-list li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(45deg, #2860E1,black );
+            transition: width 0.3s ease;
         }
+
+        .msm-module-list li:hover::before {
+            padding:1%;
+            width: 20px;
+        }
+
+        .msm-module-list li:hover {
+            background: linear-gradient(45deg, #2860E1, black);
+            transform: translateY(-5px) scale(1.02);
+
+        }
+
+
         .msm-module-title {
             font-weight: bold;
             font-size:16px;
@@ -38,93 +64,110 @@
             font-size:12px;
             margin-left:10%;
         }
-        .msm-container img{
-            padding:10%;
 
+
+        .msm-container img {
+            padding: 10%;
+            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+             filter: grayscale(100%);
         }
+
+        .msm-container img:hover {
+            transform: scale(1.1); /* Slightly zoom the image on hover */
+            filter: grayscale(0%); /* Transition to color */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+        }
+
         .ef-effectiveness-section {
-            background-color: #000;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-        }
+    background-color: #000;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
 
-        .ef-effectiveness-section h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+.ef-effectiveness-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 
-        .ef-effectiveness-section p {
-            margin-bottom: 40px;
-            font-size: 1rem;
-            color: #aaa;
-        }
+.ef-effectiveness-section p {
+    margin-bottom: 40px;
+    font-size: 1rem;
+    color: #aaa;
+}
 
-        .ef-statistics {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+.ef-statistics {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
-        .ef-stat-card {
-            flex: 1;
-            margin: 20px;
-            max-width: 300px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
+.ef-stat-card {
+    flex: 1;
+    margin: 20px;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
 
-         .ef-stat-card:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 0;
-            width: 1px;
-            height: 100%;
-            background: #fff;
-            transform: translateY(-50%);
-        }
+.ef-stat-card:hover {
+    transform: translateY(-10px);
+    background-color: #333;
+}
 
-        .ef-stat-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
+.ef-stat-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
 
-        .ef-stat-card p {
-            color: #ccc;
-            font-size: 1rem;
-        }
+.ef-stat-card p {
+    color: #ccc;
+    font-size: 1rem;
+}
 
-        .ef-stat-circle {
-            position: relative;
-            margin: 0 auto 20px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: conic-gradient(#007bff 0 50%, transparent 50% 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.ef-stat-circle {
+    position: relative;
+    margin: 0 auto 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#007bff 0 50%, transparent 50% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
 
-        .ef-stat-circle::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80px;
-            height: 80px;
-            background-color: #0b0d18;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
+.ef-stat-card:hover .ef-stat-circle {
+    transform: rotate(360deg);
+}
 
-        .ef-stat-circle span {
-            position: relative;
-            font-size: 1.5rem;
-            color: #007bff;
-        }
+.ef-stat-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #0b0d18;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ef-stat-circle span {
+    position: relative;
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.ef-stat-card:hover .ef-stat-circle span {
+    color: #fff;
+}
 
     </style>
 </head>
@@ -217,6 +260,8 @@
             </div>
         </div>
     </div>
+
+
 
     <section class="ef-effectiveness-section">
         <h2>EFFECTIVENESS OF ONE-STOP FLEET MANAGEMENT</h2>
