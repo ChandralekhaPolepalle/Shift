@@ -24,13 +24,13 @@
             <h5>AI Powered SaaS Based Products </h5>
             <h1> MEET THE UNIQUE NEEDS OF YOUR BUSINESS</h1>
             <p>Connect, automate, and manage physical operations with a fully integrated product suite. SHIFT combines ease of use with constantly evolving features to help you stay ahead.</p>
-            <a href="subscription_form" class="btn-custom">Free Trial</a>
+            <a href="/#subscribe-container" class="btn-custom">Free Trial</a>
             <a href="#" class="btn-see-more">See more &gt;</a>
         </div>
-<!--        <div class="image-container">-->
-<!--        <div class="image-overlay"></div>-->
-<!--        <img src="/static/images/products_page_bg.png" class="img-fluid" alt="home bg Image">-->
-<!--    </div>-->
+        <div class="image-container">
+        <div class="image-overlay"></div>
+        <img src="/static/images/products_page_bg.png" class="img-fluid" alt="home bg Image">
+    </div>
     </div>
 
     {% include 'features.html' %}
@@ -41,6 +41,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            if (window.location.hash) {
+              const target = document.querySelector(window.location.hash);
+              if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          });
+    </script>
 
 </body>
 
