@@ -218,5 +218,28 @@
             </div>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.ps-tabs li');
+            const contents = document.querySelectorAll('.ps-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const target = this.getAttribute('data-tab');
+
+                    tabs.forEach(t => t.classList.remove('ps-active'));
+                    this.classList.add('ps-active');
+
+                    contents.forEach(content => {
+                        content.classList.remove('ps-active');
+                        if (content.id === target) {
+                            content.classList.add('ps-active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
