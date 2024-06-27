@@ -13,8 +13,8 @@ body, html {
     align-items: center;
     padding: 40px 20px;
     background-color: #000;
-    margin-left:7%;
-    margin-right:7%;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 .bai-content {
@@ -32,7 +32,7 @@ body, html {
 .bai-description {
     font-size: 0.8em;
     margin-top: 5%;
-    opacity:0.5;
+    opacity: 0.5;
 }
 
 .bai-button {
@@ -44,12 +44,11 @@ body, html {
     cursor: pointer;
     font-size: 1em;
     margin-top: 10%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .bai-button:hover {
     background-color: #0056b3;
-    color: white;
-    text-decoration: none;
     transform: scale(1.05);
 }
 
@@ -78,13 +77,14 @@ body, html {
     text-align: center;
     position: relative;
     height: 400px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .bai-carousel-item img {
     width: 100%;
-    height:100%;
-     object-fit: cover;
-
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .bai-carousel-item-title {
@@ -100,6 +100,11 @@ body, html {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.bai-carousel-item:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
 .bai-carousel-controls {
     display: flex;
     justify-content: space-between;
@@ -110,18 +115,13 @@ body, html {
     transform: translateX(-50%);
 }
 
-.bai-carousel-controls .bai-arrow-left:hover{
-    opacity:0.5;
+.bai-arrow-left:hover, .bai-arrow-right:hover {
+    opacity: 0.5;
     color: white;
     text-decoration: none;
-    transform: scale(1.05);
+    transform: scale(1.2);
 }
-.bai-carousel-controls .bai-arrow-right:hover{
-    opacity:0.5;
-    color: white;
-    text-decoration: none;
-    transform: scale(1.05);
-}
+
 .bai-arrow {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;

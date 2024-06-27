@@ -220,6 +220,20 @@ body {
     margin-right: 5%;
 }
 
+.social-media ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+.social-media ul li a i{
+  width:100%;
+  height:100%;
+}
+.social-media ul li a:hover {
+  color: #2860E1;
+  text-shadow: 0 0 5px #2860E1;
+  transform: scale(2);
+}
+
 .logo-column {
     width: 166.21px;
     height: 39.69px;

@@ -57,8 +57,11 @@
         .navbar-toggler {
             margin-top: 10px;
             margin-bottom: 10px;
-        }
 
+        }
+        .navbar-toggler-icon{
+            color:#2860E1;
+        }
         .navbar-nav {
             margin: auto;
         }

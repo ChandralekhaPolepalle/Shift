@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHIFT Product Suites</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="static/css/product_suites.css" rel="stylesheet">
     <style>
-
         body {
             background-color: #000;
             color: white;
@@ -25,26 +22,53 @@
 
         .ps-title {
             font-size: 32px;
-            margin-bottom: 10px;
+            margin-bottom: 35px;
         }
 
         .ps-tabs {
             list-style-type: none;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 10%;
             padding: 0;
             margin: 0;
         }
 
         .ps-tabs li {
+            position: relative;
             cursor: pointer;
             padding: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .ps-tabs li.ps-active a, .ps-tabs li a:hover {
-            border-bottom: 2px solid #2860E1;
+        .ps-tabs li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
+        .ps-tabs li:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #2860E1;
+            transition: width 0.3s ease;
+        }
+
+        .ps-tabs li.ps-active:before,
+        .ps-tabs li:hover:before {
+            width: 100%;
+        }
+
+        .ps-tabs li:hover a {
+            color: #2860E1;
         }
 
         .ps-product-content {
@@ -54,18 +78,25 @@
             min-height: 60vh;
             padding: 40px 20px;
             background-color: #0b0d18;
-            margin-left:7%;
-            margin-right:7%;
+            margin-left: 7%;
+            margin-right: 7%;
         }
 
         .ps-image-container {
             flex: 1;
             padding-right: 20px;
             text-align: right;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: brightness(0.7);
         }
 
         .ps-image-container img {
             max-width: 100%;
+        }
+
+        .ps-image-container:hover {
+            transform: scale(1.05);
+            filter: brightness(1);
         }
 
         .ps-text-container {
@@ -77,6 +108,11 @@
         .ps-heading {
             font-size: 2.5em;
             margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .ps-heading:hover {
+            color: #2860E1;
         }
 
         .ps-subheading {
@@ -97,16 +133,12 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-
-        .ps-learn-more:hover {
-            color: white;
-            text-decoration: none;
-            transform: scale(1.05);
-        }
         .ps-learn-more:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
 
         .ps-content {
@@ -115,8 +147,22 @@
 
         .ps-content.ps-active {
             display: flex;
-            background-color:#000;
+            background-color: #000;
+        }
 
+        @media (max-width: 768px) {
+            .ps-product-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ps-product-content .ps-image-container, .ps-product-content .ps-text-container {
+                padding: 10px;
+            }
+
+            .ps-product-content .ps-text-container .ps-heading {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -128,7 +174,6 @@
                 <li class="ps-active" data-tab="admin"><a href="#">Admin Portal</a></li>
                 <li data-tab="customer"><a href="#">Customer App</a></li>
                 <li data-tab="agent"><a href="#">Agent App</a></li>
-<!--                <li data-tab="driver"><a href="#">Driver App</a></li>-->
             </ul>
         </nav>
     </header>
@@ -172,44 +217,6 @@
                 <button class="ps-learn-more">Learn More</button>
             </div>
         </div>
-
-<!--        <div id="driver" class="ps-product-content ps-content">-->
-<!--            <div class="ps-image-container">-->
-<!--                <img src="/static/images/agent_app.png" alt="Driver App">-->
-<!--            </div>-->
-<!--            <div class="ps-text-container">-->
-<!--                <h2 class="ps-heading">Driver App</h2>-->
-<!--                <p class="ps-subheading">Operational & Delivery</p>-->
-<!--                <p class="ps-description">Shift provides SaaS solutions for fleet management, tailored for FMCs and OEMs. Our end-to-end-->
-<!--                   platform offers white-label options and module-based solutions to streamline operations-->
-<!--                   for our clients in the automotive industry.</p>-->
-<!--                <button class="ps-learn-more">Learn More</button>-->
-<!--            </div>-->
-<!--        </div>-->
     </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const tabs = document.querySelectorAll('.ps-tabs li');
-            const contents = document.querySelectorAll('.ps-content');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const target = this.getAttribute('data-tab');
-
-                    tabs.forEach(t => t.classList.remove('ps-active'));
-                    this.classList.add('ps-active');
-
-                    contents.forEach(content => {
-                        content.classList.remove('ps-active');
-                        if (content.id === target) {
-                            content.classList.add('ps-active');
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
