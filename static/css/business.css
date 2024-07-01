@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Archivo';
     background-color: #000;
     color: white;
 }
@@ -45,6 +45,7 @@ body, html {
     font-size: 1em;
     margin-top: 10%;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Roboto';
 }
 
 .bai-button:hover {
@@ -85,6 +86,7 @@ body, html {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity:0.8;
 }
 
 .bai-carousel-item-title {
@@ -97,7 +99,7 @@ body, html {
     transform: translate(-50%);
     color: white;
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.6);
+    font-weight:bold;
 }
 
 .bai-carousel-item:hover {
@@ -107,12 +109,13 @@ body, html {
 
 .bai-carousel-controls {
     display: flex;
-    justify-content: space-between;
-    width: 0%;
+
+    width: 100%;
     margin-top: 20px;
     position: absolute;
-    left: 50%;
+    margin-left: 115%;
     transform: translateX(-50%);
+    opacity:0.7;
 }
 
 .bai-arrow-left:hover, .bai-arrow-right:hover {
@@ -141,29 +144,70 @@ body, html {
 }
 
 @media (max-width: 768px) {
+
     .bai-section {
         flex-direction: column;
         align-items: center;
+        padding: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .bai-content {
         max-width: 100%;
-        text-align: center;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .bai-title {
+        font-size: 2.5em;
+        margin-top: 0;
+    }
+
+    .bai-description {
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+
+    .bai-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+        margin-top: 20px;
     }
 
     .bai-carousel-wrapper {
         width: 100%;
+        margin-top:20%;
+    }
+
+    .bai-carousel {
+        gap: 10px;
     }
 
     .bai-carousel-item {
         width: 90%;
+        height: 250px;
+        min-width: 250px;
+    }
+
+    .bai-carousel-item-title {
+        font-size: 1.2em;
+        padding: 3px 6px;
     }
 
     .bai-carousel-controls {
-        justify-content: center;
+        display:flex-wrap;
+        justify-content: left;
+        position: absolute;
+        margin-left: 50%;
     }
 
     .bai-arrow-left, .bai-arrow-right {
         margin: 0 10px;
+    }
+
+    .bai-arrow {
+        font-size: 1.2em;
+        padding: 8px;
     }
 }

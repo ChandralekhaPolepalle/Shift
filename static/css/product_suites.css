@@ -108,6 +108,7 @@ body, html {
     .ps-product-content {
         flex-direction: column;
         text-align: center;
+        padding:20%;
     }
 
     .ps-product-content .ps-image-container, .ps-product-content .ps-text-container {
