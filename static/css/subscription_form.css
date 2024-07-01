@@ -5,7 +5,7 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Archivo, sans-serif;
+            font-family: 'Archivo';
             background-color: #000;
             color: white;
         }
@@ -22,12 +22,12 @@
 
         .subscribe-form {
             position: relative;
-            background-color: #1a233a;
+            background-color: #000;
             padding: 60px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             color: white;
-            max-width: 1000px;
+            max-width: 85%;
             width: 100%;
             background-image: radial-gradient(
                 rgba(255, 255, 255, 0.1) 1px,
@@ -74,7 +74,8 @@
         }
 
         .subscribe-form .form-control {
-            background-color: #2a3b5f;
+            background-color: #000;
+            opacity:0.7;
             border: 1px solid #3a4a6f;
             color: white;
             padding: 10px;
@@ -99,7 +100,7 @@
             width: 24px;
             height: 24px;
             border-radius: 4px;
-            background-color: #2c2c54;
+            background-color: transparent;
             border: 1px solid #3a3a68;
             -webkit-appearance: none;
             appearance: none;
@@ -111,8 +112,10 @@
         }
 
         .subscribe-form .form-check-input:checked {
-            background-color: #007bff;
-            border: none;
+            background-color: #001;
+            opacity:0.7;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px var(--primary-color);
         }
 
         .subscribe-form .form-check-input:checked::before {
@@ -131,21 +134,23 @@
 
         .subscribe-form .form-check-label {
             color: white;
-            margin-left: 5px;
+            margin-left: 10px;
         }
 
         .subscribe-form .btn-primary {
-            background-color: #007bff;
-            border: none;
+            background-color: #000;
+            border: 1px solid #3a3a68;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Roboto';
         }
 
         .subscribe-form .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: #2860E1;
+            border: 1px solid #3a3a68;
             color: white;
             text-decoration: none;
             transform: scale(1.05);
@@ -159,5 +164,24 @@
 
             .form-group {
                 width: 100%;
+            }
+
+            .subscribe-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 75vh;
+                background-color: #000;
+
+            }
+            .subscribe-form {
+                padding: 10%;
+            }
+            .form-check {
+                margin-top:10%;
+            }
+            .subscribe-form .form-check-input {
+                width: 40px;
+                height: 25px;
             }
         }

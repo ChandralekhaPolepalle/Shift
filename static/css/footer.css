@@ -5,7 +5,7 @@ html {
 body {
     background-color: #000;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Archivo';
 }
 
 .footer {
@@ -18,7 +18,12 @@ body {
     font-size: 14px;
 
 }
-
+.footer .copyright{
+    text-align:left;
+    margin-top:35%;
+    margin-left:20%;
+    font-size:x-small;
+}
 .footer a {
     font-size: 12px;
     color: #8B8A8C;
@@ -168,8 +173,19 @@ body {
     .social-media {
         justify-content: center;
     }
+    .footer .copyright{
+        text-align:left;
+        margin-top:5%;
+        margin-left:15%;
+        font-size:x-small;
+    }
 
-.footer ul li {
+    .footer ul li {
     justify-content: center;
-}
+    }
+
+    .footer ul li {
+        justify-content: center;
+
+    }
 }

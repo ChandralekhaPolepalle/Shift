@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi-Service Modules</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <style>
         body.msm-body {
-            font-family:Arial, sans-serif;
+            font-family:'Archivo';
             background-color: #000;
             color: white;
         }
@@ -69,9 +71,9 @@
         }
 
         .msm-container img:hover {
-            transform: scale(1.1); /* Slightly zoom the image on hover */
-            filter: grayscale(0%); /* Transition to color */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+            transform: scale(1.1);
+            filter: grayscale(0%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
         .ef-effectiveness-section {
             background-color: #000;
@@ -115,8 +117,10 @@
 }
 
 .ef-stat-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
+    text-transform:uppercase;
+
 }
 
 .ef-stat-card p {
@@ -163,16 +167,22 @@
 .ef-stat-card:hover .ef-stat-circle span {
     color: #fff;
 }
+@media (max-width: 768px) {
+    .msm-container .row{
+        padding:10%;
+    }
+}
     </style>
 </head>
 <body class="msm-body">
     <div class="container msm-container">
         <div class="row">
             <div class="col-md-6">
+                <h2 class="mb-4">Multi-Service Modules</h2>
                 <img src="/static/images/msm_ca.png" class="img-fluid" alt="Multi-Service Modules Image">
             </div>
             <div class="col-md-6">
-                <h2 class="mb-4">Multi-Service Modules</h2>
+
                 <ul class="msm-module-list">
                     <li>
                         <div class="msm-module-title">01 &nbsp;&nbsp;&nbsp;&nbsp; CAR SUBSCRIPTION</div>
@@ -228,10 +238,11 @@
     <div class="container msm-container">
         <div class="row">
             <div class="col-md-6">
+                <h2 class="mb-4">Simplify Fleet Maintenance</h2>
                 <img src="/static/images/simplify_fleet_ca.png" class="img-fluid" alt="Multi-Service Modules Image">
             </div>
             <div class="col-md-6">
-                <h2 class="mb-4">Simplify Fleet Maintenance</h2>
+
                 <ul class="msm-module-list">
                     <li>
                         <div class="msm-module-title">01 &nbsp;&nbsp;&nbsp;&nbsp; PREVENTIVE FLEET MAINTENANCE</div>

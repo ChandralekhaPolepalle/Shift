@@ -5,34 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Features</title>
     <link href="static/css/home_keyfeatures.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <section class="hkf-features-section">
-        <h2 class="hkf-features-title" style="color: white;" >Key Features</h2>
+        <h2 class="hkf-features-title" style="color: white;">Key Features</h2>
         <div class="hkf-features-container">
-            <div class="hkf-feature">
-                <img src="\static\images\inspection.png" alt="Inspection">
-                <h3 style="color: white;margin-top:5%;">Inspection</h3>
-                <p style=" color: #A2A1A3;">Assurance for top-notch quality, including dent and scratch detection.</p>
+            <div class="hkf-feature active" id="feature-1">
+                <img src="static/images/inspection.png" alt="Inspection">
+                <h3 style="color: white; margin-top: 5%;">Inspection</h3>
+                <p style="color: #A2A1A3;">Assurance for top-notch quality, including dent and scratch detection.</p>
             </div>
-            <div class="hkf-feature">
-                <img src="\static\images\inventory.webp" alt="Inventory Management">
-                <h3 style="color: white;margin-top:5%;">Inventory Management</h3>
-                <p style=" color: #A2A1A3;">Driven by AI, we predict, optimize, and automate fleet operations.</p>
+            <div class="hkf-feature" id="feature-2">
+                <img src="static/images/inventory.webp" alt="Inventory Management">
+                <h3 style="color: white; margin-top: 5%;">Inventory Management</h3>
+                <p style="color: #A2A1A3;">Driven by AI, we predict, optimize, and automate fleet operations.</p>
             </div>
-            <div class="hkf-feature">
-                <img src="\static\images\viewmap.jpg" alt="God's View Map">
-                <h3 style="color: white;margin-top:5%;">God's View Map</h3>
-                <p style=" color: #A2A1A3;">Monitor vehicles, assets, and driver locations on a single map.</p>
+            <div class="hkf-feature" id="feature-3">
+                <img src="static/images/viewmap.jpg" alt="God's View Map">
+                <h3 style="color: white; margin-top: 5%;">God's View Map</h3>
+                <p style="color: #A2A1A3;">Monitor vehicles, assets, and driver locations on a single map.</p>
             </div>
-
-
         </div>
         <div class="hkf-carousel-indicators">
-            <span class="hkf-indicator active"></span>
-            <span class="hkf-indicator"></span>
-            <span class="hkf-indicator"></span>
+            <span class="hkf-indicator active" data-target="feature-1"></span>
+            <span class="hkf-indicator" data-target="feature-2"></span>
+            <span class="hkf-indicator" data-target="feature-3"></span>
         </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const indicators = document.querySelectorAll('.hkf-indicator');
+            const features = document.querySelectorAll('.hkf-feature');
+
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    indicators.forEach(ind => ind.classList.remove('active'));
+                    features.forEach(feat => feat.classList.remove('active'));
+
+                    const targetId = this.getAttribute('data-target');
+                    this.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

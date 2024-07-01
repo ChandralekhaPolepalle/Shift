@@ -39,8 +39,9 @@ body, html {
     margin: 25px;
     width: 200px;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
     position: relative;
+    align-items: left;
 }
 
 .feature-card i {
