@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -6,6 +9,7 @@ body, html {
     color: white;
 }
 
+
 .bai-section {
     display: flex;
     flex-direction: row;
@@ -13,8 +17,8 @@ body, html {
     align-items: center;
     padding: 40px 20px;
     background-color: #000;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-right:7%;
+    margin-left:7%;
 }
 
 .bai-content {
@@ -209,5 +213,13 @@ body, html {
     .bai-arrow {
         font-size: 1.2em;
         padding: 8px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .bai-section {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 55%;
     }
 }
