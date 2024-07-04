@@ -1,7 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: #000;
     color: #fff;
     font-family: 'Archivo';
+    letter-spacing:0.02em;
 }
 
 .background-image {
@@ -17,19 +21,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: calc(100vh - 80px);
-    padding: 0 20px;
-    overflow: hidden;
+    padding: 5% 5%;
+    font-family: 'Archivo';
+    width:95%;
+    margin-left:2%;
 }
 
 .main-content-text {
     max-width: 800px;
 }
 
-.main-content-text:hover {
+/*.main-content-text:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+}*/
 
 .main-content-text h5,
 .main-content-text h1,
@@ -37,11 +42,11 @@ body {
     transition: opacity 0.3s;
 }
 
-.main-content-text:hover h5,
+/*.main-content-text:hover h5,
 .main-content-text:hover h1,
 .main-content-text:hover p {
     opacity: 0.8;
-}
+}*/
 
 .main-content h5 {
     font-size: 1.5rem;
@@ -51,6 +56,8 @@ body {
 .main-content h1 {
     font-size: 60px;
     margin-bottom: 1rem;
+    letter-spacing:0.1em;
+    font-weight: 700px;
 }
 
 .main-content p {
@@ -185,3 +192,12 @@ body {
         height: auto;
     }
 }
+@media (min-width: 1600px) {
+    .main-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        margin-top: -2%;
+    }
+}
+

@@ -11,23 +11,28 @@
 </head>
 <body>
 <div class="subscribe-container" id="subscribe-container">
-    <form class="subscribe-form">
+    <form class="subscribe-form" action="/subscription_form" method="POST">
         <h2>Subscribe</h2>
+        {% if message %}
+        <div class="alert alert-success msg" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
         <div class="form-container">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="email" class="form-control" id="email" placeholder="Email Address *" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address *" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="businessType" placeholder="Business Type">
+                    <input type="text" class="form-control" id="businessType" name="businessType" placeholder="Business Type">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name *" required>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name *" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="services" placeholder="Services">
+                    <input type="text" class="form-control" id="services" name="services" placeholder="Services">
                 </div>
             </div>
         </div>
@@ -35,8 +40,8 @@
             <div class="col-md-4">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-            <div class="form-check col-md-6" >
-                <input type="checkbox" class="form-check-input" id="subscribeCheck">
+            <div class="form-check col-md-6">
+                <input type="checkbox" class="form-check-input" id="subscribeCheck" name="subscribeCheck">
                 <label class="form-check-label" for="subscribeCheck">Agree to receive email from SHIFT and stay up-to-date.</label>
             </div>
         </div>

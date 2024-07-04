@@ -16,6 +16,8 @@
             padding: 0;
         }
 
+
+
         .ps-header {
             text-align: center;
             padding: 20px;
@@ -178,9 +180,16 @@
                 font-size: 1.5em;
             }
         }
+        @media (min-width: 1600px) {
+            .container-fluid{
+
+                max-width: 60%;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="container-fluid">
     <header class="ps-header">
         <h1 class="ps-title">SHIFT Product Suites</h1>
         <nav>
@@ -228,10 +237,11 @@
                 <p class="ps-description">Shift provides SaaS solutions for fleet management, tailored for FMCs and OEMs. Our end-to-end
                    platform offers white-label options and module-based solutions to streamline operations
                    for our clients in the automotive industry.</p>
-                <button class="ps-learn-more">Learn More</button>
+                <a href="productCustomerApp"><button class="ps-learn-more">Learn More</button></a>
             </div>
         </div>
     </main>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const tabs = document.querySelectorAll('.ps-tabs li');
