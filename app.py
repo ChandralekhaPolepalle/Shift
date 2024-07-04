@@ -8,15 +8,38 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = 'credentials.json'
+
+# Load Google credentials from environment variable
+try:
+    google_credentials = os.getenv('GOOGLE_CREDENTIALS')
+    if google_credentials is None:
+        raise ValueError("GOOGLE_CREDENTIALS environment variable is not set.")
+    credentials_info = json.loads(google_credentials)
+    credentials = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
+except Exception as e:
+    raise ValueError("Failed to load Google credentials. Ensure the environment variable is set correctly.") from e
+
+# Google Sheets API setup
 SPREADSHEET_ID = '1VGBJr6zFSilCvF7jCv_0ejlUR2CcST_QHCR4bZDXkwE'
 RANGE_NAME = 'Sheet1!A2:D2'
-
-
-credentials = Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 service = build('sheets', 'v4', credentials=credentials)
 sheet = service.spreadsheets()
+
+# GOOGLE_CREDENTIALS = os.getenv('GOOGLE_CREDENTIALS')
+# credentials_info = json.loads(GOOGLE_CREDENTIALS)
+# credentials = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
+# service = build('sheets', 'v4', credentials=credentials)
+# sheet = service.spreadsheets()
+# # SERVICE_ACCOUNT_FILE = 'credentials.json'
+#
+#
+
+#
+#
+# # credentials = Credentials.from_service_account_file(
+# #     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+# # service = build('sheets', 'v4', credentials=credentials)
+# # sheet = service.spreadsheets()
 
 @app.route('/')
 def index():
