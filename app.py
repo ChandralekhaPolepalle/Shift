@@ -3,15 +3,18 @@ import json
 from flask import Flask, render_template, request, redirect, url_for
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
-
+# from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+# load_dotenv()
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # Load Google credentials from environment variable
 try:
     google_credentials = os.getenv('GOOGLE_CREDENTIALS')
+
     if google_credentials is None:
         raise ValueError("GOOGLE_CREDENTIALS environment variable is not set.")
     credentials_info = json.loads(google_credentials)
@@ -112,6 +115,10 @@ def fleetManagement():
 @app.route('/comingSoon')
 def comingSoon():
     return render_template('coming_soon.html')
+
+@app.route('/home')
+def Home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

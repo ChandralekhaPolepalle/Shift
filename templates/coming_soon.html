@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
@@ -21,42 +22,45 @@
             letter-spacing: 0.02em;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 150vh;
+            margin: 0;
+            padding: 0;
         }
 
         .main-content {
+            position: relative;
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
 
         .coming-soon-container {
+            position: absolute;
+            z-index: 2;
             text-align: center;
             padding: 2rem;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            margin-top:15%;
-            margin-bottom:15%;
-        }
-
-        .coming-soon-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-            transform: skewX(-30deg);
-            transition: 0.7s;
         }
 
-        .coming-soon-container:hover::before {
-            left: 100%;
-        }
+
 
         h1 {
             font-size: 3rem;
@@ -67,7 +71,7 @@
         p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
-            font-family: 'Roboto';
+            font-family: 'Roboto', 'Archivo';
         }
 
         .btn-custom {
@@ -95,6 +99,10 @@
 <body>
     {% include 'nav.html' %}
     <div class="main-content">
+        <video autoplay muted loop class="bg-video">
+            <source src="static/images/head.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="coming-soon-container">
             <h1>Coming Soon</h1>
             <p>Our new website is on its way. Stay tuned for updates!</p>
@@ -104,14 +112,14 @@
     {% include 'footer.html' %}
 
     <script>
-          document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             if (window.location.hash) {
-              const target = document.querySelector(window.location.hash);
-              if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-              }
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             }
-          });
+        });
     </script>
 </body>
 </html>

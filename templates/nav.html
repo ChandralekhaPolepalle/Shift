@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NavBar</title>
-    <link rel="icon" type="image/x-icon" href="/static/images/fav_icon.png">
+    <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="static/css/navbar.css" rel="stylesheet">
@@ -17,6 +17,8 @@
             background-color: #000;
             color: #fff;
             font-family: 'Archivo', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar {
@@ -26,13 +28,16 @@
             background-color: transparent;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             padding-left: 0;
             padding-right: 0;
         }
 
-        .navbar .container-fluid{
-            width:90%;
+        .navbar .container-fluid {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .navbar-logo img, .navbar-brand img {
@@ -94,6 +99,12 @@
             padding-bottom: 0.10%;
             background-color: #000;
             color: white;
+            text-decoration: none;
+        }
+        .signup button,
+        .signup a {
+            text-decoration: none;
+             outline: none;
         }
 
         .navbar-nav .dropdown:hover .dropdown-menu {
@@ -152,20 +163,15 @@
             padding: 2%;
         }
 
-        @media (max-width: 1024px) and (min-width: 768px) {
-            .navbar {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
-        }
-
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 padding: 10px;
                 align-items: flex-start;
             }
-
+            .dropdown-columns .column a{
+                text-wrap: wrap;
+            }
             .navbar-logo img {
                 width: 100px;
             }
@@ -173,17 +179,34 @@
             .navbar-nav {
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
             }
 
             .navbar-nav li {
                 margin: 5px 0;
             }
 
-            .dropdown-menu {
+            .collapse.navbar-collapse {
+                display: none; /* Hidden by default */
+                flex-direction: column;
+                align-items: flex-start;
+                background-color: #000;
+                width: 100%;
+                padding: 20px;
+            }
+
+            .collapse.navbar-collapse.show {
+                display: flex !important; /* Show on toggler click */
+            }
+
+            .navbar-nav .dropdown-menu {
                 width: 90vw;
                 flex-direction: column;
                 left: 50%;
                 transform: translateX(-50%);
+                top: auto;
+                position: absolute !important; /* Ensure position is absolute */
+                margin: 10px 0;
             }
 
             .dropdown-columns {
@@ -193,24 +216,68 @@
             .image-column {
                 width: 100%;
             }
+
+            .column {
+                width: 100%;
+            }
+
+            .navbar .nav-link {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .navbar .dropdown-menu {
+                position: absolute !important; /* Ensure position is absolute */
+                float: none;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .navbar .dropdown-menu .dropdown-columns {
+                flex-direction: column;
+            }
+            .signup {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .navbar-collapse {
+                flex-direction: column;
+            }
+
+            .navbar-nav {
+                width: 100%;
+                justify-content: center;
+            }
         }
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .navbar {
+                padding-left: 5%;
+                padding-right: 5%;
+                max-width: 55%;
+            }
+        }
+
         @media (min-width: 1600px) {
-            .navbar .container-fluid{
+            .navbar .container-fluid {
                 max-width: 55%;
             }
             .dropdown-menu {
                 width: 55vw;
             }
+        }
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-black">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="/static/images/logo.png" alt="Shift">
+                <img src="/static/images/shift_logo.png" alt="Shift">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="color:#2860E1";></span>
+                <span class="navbar-toggler-icon" style="color:#2860E1;"><i class="fas fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
@@ -218,7 +285,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Products
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:67%;">
+                        <div class="dropdown-menu" aria-labelledby="productsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column image-column">
                                     <img src="/static/images/product.png" alt="Product Image">
@@ -226,7 +293,6 @@
                                 <div class="column">
                                     <h5>AI Powered SaaS Products</h5>
                                     <a class="dropdown-item" href="productAdminPortal"><i class="fas fa-camera"></i>Fleet Management & Optimization Admin Portal</a>
-<!--                                    <a class="dropdown-item" href="productAdminPortal"><img src="/static/images/configuration.svg">Fleet Management & Optimization Admin Portal</a>-->
                                     <a class="dropdown-item" href="productCustomerApp"><i class="fas fa-cogs"></i>White-Label Customer App</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-car-crash"></i>Agent Operational App</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-map-signs"></i>White-Label Driver App</a>
@@ -236,7 +302,8 @@
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-satellite"></i>ELD compliance IFTA Reporting & CSA Insights</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-key"></i>AI Dash-cam</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-handshake"></i>Tracking & Telematics</a>
-                                    <a class="dropdown-item" href="comingSoon"><i class="fas fa-code"></i>Digital Key & Remote Authorization</a>
+                                    <a class="dropdown-item" href="comingSoon"><i class="fas fa-tools"></i>Vehicle Diagnostics & Maintenance</a>
+                                    <a class="dropdown-item" href="comingSoon"><i class="fas fa-user-friends"></i>Driver Coaching & Gamification</a>
                                 </div>
                             </div>
                         </div>
@@ -245,10 +312,10 @@
                         <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Solutions
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown" style="margin-left:-48%;">
+                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column image-column">
-                                    <img src="/static/images/product.png" alt="Product Image">
+                                    <img src="/static/images/solutions.png" alt="Solution Image">
                                 </div>
                                 <div class="column">
                                     <h5>By Needs</h5>
@@ -278,57 +345,75 @@
                         <a class="nav-link dropdown-toggle" href="#" id="technologiesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Technologies
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="technologiesDropdown" style="margin-left:-129%;">
+                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column image-column">
-                                    <img src="/static/images/product.png" alt="Product Image">
+                                    <img src="/static/images/technologies.png" alt="Solution Image">
                                 </div>
                                 <div class="column">
-                                    <h5>SHIFT AI Algorithms</h5>
-                                    <a class="dropdown-item" href="comingSoon"><i class="fas fa-camera"></i>AI Camera Inspection</a>
+                                    <h5>SHIFT AI Alogorithms</h5>
+                                    <a class="dropdown-item" href="comingSoon"><i class="fas fa-camera"></i>AI Camera Inspection </a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-cogs"></i>Predictive Maintenance</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-car-crash"></i>Collision Detection</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-map-signs"></i>Intelligent Route Planing</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-map-signs"></i>Changer Route Planing</a>
                                 </div>
                                 <div class="column">
-                                    <h5>SHIFT Technologies</h5>
+                                    <h5>By Industry</h5>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-satellite"></i>Telematics</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-key"></i>Digital Key</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-handshake"></i>Integration Partners</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-code"></i>Developer Portal APIs</a>
                                 </div>
+
                             </div>
                         </div>
                     </li>
-<!--                    <li class="nav-item ml-3">-->
-<!--                        <a class="nav-link" href="#">News</a>-->
-<!--                    </li>-->
                     <li class="nav-item ml-3">
-                        <a class="nav-link" href="/#subscribe-container">Contact Us</a>
+                        <a class="nav-link" href="/#subscribe-container">ContactUs</a>
                     </li>
+
+                    <a href="/#subscribe-container">
+                    <div class="signup">
+                        <button class="btn btn-outline-primary my-2 my-sm-0">Sign up</button>
+                    </div>
+                    </a>
                 </ul>
             </div>
-            <a href="/#subscribe-container">
-            <div class="signup">
-                <button class="btn btn-outline-primary my-2 my-sm-0">Sign up</button>
-            </div>
-            </a>
         </div>
     </nav>
 
+    <div class="content-container">
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-            if (window.location.hash) {
-              const target = document.querySelector(window.location.hash);
-              if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-              }
+        $(document).ready(function() {
+            function adjustPadding() {
+                var navbarHeight = $('.navbar').outerHeight();
+                var dropdownHeight = $('.dropdown-menu').outerHeight();
+                var totalPadding = navbarHeight + dropdownHeight;
+                $('.content-container').css('padding-top', totalPadding);
             }
-          });
+
+            // Adjust padding when toggler is clicked
+            $('.navbar-toggler').on('click', function() {
+                setTimeout(adjustPadding, 300); // Adding slight delay for animation
+                $('#navbarNav').collapse('toggle'); // Toggle collapse on click
+            });
+
+            // Adjust padding when dropdown is hovered
+            $('.dropdown').on('mouseenter', function() {
+                adjustPadding();
+            });
+
+            $('.dropdown').on('mouseleave', function() {
+                var navbarHeight = $('.navbar').outerHeight();
+                $('.content-container').css('padding-top', navbarHeight);
+            });
+        });
     </script>
 </body>
 </html>
