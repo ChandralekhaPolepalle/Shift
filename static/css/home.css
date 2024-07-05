@@ -58,7 +58,7 @@ body {
 
 .btn-see-more {
     background-color: transparent;
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'Archivo';
 }
 
 .btn-custom:hover {
@@ -124,6 +124,7 @@ body {
 /* Mobile Styling */
 @media (max-width: 768px) {
     .main-content {
+
         flex-direction: column;
         align-items: left;
         text-align: left;

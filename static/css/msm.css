@@ -169,7 +169,10 @@ body.msm-body {
             .main-content {
                 margin-left: auto;
                 margin-right: auto;
-                max-width: 55%;
+                max-width: 63%;
+            }
+            .msm-container{
+                max-width:80%;
             }
             .ef-effectiveness-section {
                 background-color: #000;

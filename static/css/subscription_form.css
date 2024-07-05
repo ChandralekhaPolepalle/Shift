@@ -156,7 +156,7 @@ html {
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Roboto';
+            font-family: 'Roboto', 'Archivo';
         }
 
         .subscribe-form .btn-primary:hover {
