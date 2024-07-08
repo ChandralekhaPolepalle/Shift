@@ -33,6 +33,7 @@
             padding-right: 0;
         }
 
+
         .navbar .container-fluid {
             width: 90%;
             display: flex;
@@ -84,6 +85,11 @@
         .navbar-toggler {
             margin-top: 10px;
             margin-bottom: 10px;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
         }
 
         .navbar-toggler-icon {
@@ -276,7 +282,7 @@
             <a class="navbar-brand" href="/">
                 <img src="/static/images/shift_logo.png" alt="Shift">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon" style="color:#2860E1;"><i class="fas fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -372,14 +378,14 @@
                     <li class="nav-item ml-3">
                         <a class="nav-link" href="/#subscribe-container">ContactUs</a>
                     </li>
-
-                    <a href="/#subscribe-container">
-                    <div class="signup">
-                        <button class="btn btn-outline-primary my-2 my-sm-0">Sign up</button>
-                    </div>
-                    </a>
                 </ul>
+                <div class="signup ml-auto"> <!-- Added ml-auto for right alignment -->
+            <a href="/#subscribe-container">
+                <button class="btn btn-outline-primary my-2 my-sm-0">Sign up</button>
+            </a>
             </div>
+            </div>
+
         </div>
     </nav>
 
@@ -390,30 +396,79 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            function adjustPadding() {
+
+    $(document).ready(function() {
+        function adjustPadding() {
+            if (window.innerWidth <= 768) {
                 var navbarHeight = $('.navbar').outerHeight();
-                var dropdownHeight = $('.dropdown-menu').outerHeight();
+                var dropdownHeight = $('.dropdown-menu:visible').outerHeight() || 0;
                 var totalPadding = navbarHeight + dropdownHeight;
                 $('.content-container').css('padding-top', totalPadding);
             }
+        }
 
-            // Adjust padding when toggler is clicked
-            $('.navbar-toggler').on('click', function() {
-                setTimeout(adjustPadding, 300); // Adding slight delay for animation
-                $('#navbarNav').collapse('toggle'); // Toggle collapse on click
-            });
+        function removePadding() {
+            if (window.innerWidth <= 768) {
+                $('.content-container').css('padding-top', 0);
+            }
+        }
 
-            // Adjust padding when dropdown is hovered
-            $('.dropdown').on('mouseenter', function() {
-                adjustPadding();
-            });
-
-            $('.dropdown').on('mouseleave', function() {
-                var navbarHeight = $('.navbar').outerHeight();
-                $('.content-container').css('padding-top', navbarHeight);
-            });
+        // Adjust padding when toggler is clicked
+        $('.navbar-toggler').on('click', function() {
+             setTimeout(function() {
+            adjustPadding();
+        }, 0);// Adding slight delay for animation
+            $('#navbarNav').collapse('toggle'); // Toggle collapse on click
         });
+
+        // Adjust padding when dropdown is hovered
+        $('.dropdown').on('mouseenter', function() {
+            adjustPadding();
+        });
+
+        $('.dropdown').on('mouseleave', function() {
+            var navbarHeight = $('.navbar').outerHeight();
+            if (window.innerWidth <= 768) {
+                $('.content-container').css('padding-top', navbarHeight);
+            }
+        });
+
+        // Remove padding when navbar collapses back
+        $('#navbarNav').on('hidden.bs.collapse', function () {
+            removePadding();
+        });
+
+        // Adjust padding when navbar expands
+        $('#navbarNav').on('shown.bs.collapse', function () {
+            adjustPadding();
+        });
+
+        // Toggle dropdown on click and adjust padding
+        $('.nav-link.dropdown-toggle').on('click', function(e) {
+            e.preventDefault();
+            var $dropdownMenu = $(this).next('.dropdown-menu');
+
+            if ($dropdownMenu.is(':visible')) {
+                $dropdownMenu.slideUp();
+            } else {
+                $('.dropdown-menu').slideUp(); // Hide all dropdown menus
+                $dropdownMenu.slideDown();
+            }
+
+            adjustPadding();
+        });
+
+        // Adjust padding on window resize
+        $(window).on('resize', function() {
+            if (window.innerWidth > 768) {
+                removePadding();
+            } else {
+                adjustPadding();
+            }
+        });
+    });
+
+
     </script>
 </body>
 </html>
