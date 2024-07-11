@@ -120,5 +120,13 @@ def comingSoon():
 def Home():
     return render_template('home.html')
 
+@app.route('/mobileNav')
+def MobileNav():
+    return render_template('mobile_nav.html')
+
+@app.route('/mobileDesktopNav')
+def MobileDesktopNav():
+    return render_template('mobile_desktop_nav.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

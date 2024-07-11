@@ -39,15 +39,26 @@
         document.addEventListener("DOMContentLoaded", function() {
             const indicators = document.querySelectorAll('.hkf-indicator');
             const features = document.querySelectorAll('.hkf-feature');
+            let currentIndex = 0;
+            const intervalTime = 2500;
 
-            indicators.forEach(indicator => {
+            function nextFeature() {
+                indicators[currentIndex].classList.remove('active');
+                features[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % indicators.length;
+                indicators[currentIndex].classList.add('active');
+                features[currentIndex].classList.add('active');
+            }
+
+            setInterval(nextFeature, intervalTime);
+
+            indicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', function() {
-                    indicators.forEach(ind => ind.classList.remove('active'));
-                    features.forEach(feat => feat.classList.remove('active'));
-
-                    const targetId = this.getAttribute('data-target');
-                    this.classList.add('active');
-                    document.getElementById(targetId).classList.add('active');
+                    indicators[currentIndex].classList.remove('active');
+                    features[currentIndex].classList.remove('active');
+                    currentIndex = index;
+                    indicators[currentIndex].classList.add('active');
+                    features[currentIndex].classList.add('active');
                 });
             });
         });

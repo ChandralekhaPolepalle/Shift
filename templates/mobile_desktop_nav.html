@@ -7,11 +7,283 @@
     <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="static/css/nav.css" rel="stylesheet">
+    <link href="static/css/navbar.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Archivo', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
+        .navbar {
+            height: 80px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
+        .navbar .container-fluid {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar-logo img, .navbar-brand img {
+            max-width: 100%;
+            height: auto;
+            width: 150px;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-logo img, .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar .nav-link {
+            color: white;
+            font-size: 16px;
+            padding-right: 30px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: white;
+            transform: scale(1.13);
+        }
+
+        .dropdown-menu {
+            background: linear-gradient(90deg, #000 0%, #001 100%);
+            border-top: 3px solid #2860E1;
+            width: 85vw;
+            left: 0;
+            padding: 20px;
+            display: none;
+            position: absolute;
+            top: 100%;
+            margin: 0 auto;
+            box-shadow: none;
+        }
+
+        .dropdown-item {
+            color: white;
+            padding: 5px 0;
+        }
+
+        .navbar-toggler {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            color: #2860E1;
+        }
+
+        .navbar-nav {
+            margin: auto;
+        }
+
+        .signup {
+            padding-top: 0.10%;
+            padding-bottom: 0.10%;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+        }
+        .signup button,
+        .signup a {
+            text-decoration: none;
+             outline: none;
+        }
+
+        .navbar-nav .dropdown:hover .dropdown-menu {
+            display: flex;
+            margin-top: 0;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .image-column {
+            flex: 0 0 30%;
+        }
+
+        .column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .column .icon img {
+            max-width: 6%;
+            height: auto;
+            display: block;
+        }
+
+        .column h5 {
+            border-bottom: 1px solid #2860E1;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .column a {
+            color: #fff;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .column a:hover {
+            background-color: transparent;
+            color: white;
+            opacity: 0.5;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        .dropdown-item i {
+            margin-right: 10px;
+            padding: 2%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px;
+                align-items: flex-start;
+            }
+            .dropdown-columns .column a{
+                text-wrap: wrap;
+            }
+            .navbar-logo img {
+                width: 100px;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .navbar-nav li {
+                margin: 5px 0;
+            }
+
+            .collapse.navbar-collapse {
+                display: none; /* Hidden by default */
+                flex-direction: column;
+                align-items: flex-start;
+                background-color: #000;
+                width: 100%;
+                padding: 20px;
+            }
+
+            .collapse.navbar-collapse.show {
+                display: flex !important; /* Show on toggler click */
+            }
+
+            .navbar-nav .dropdown-menu {
+                width: 90vw;
+                flex-direction: column;
+                left: 50%;
+                transform: translateX(-50%);
+                top: auto;
+                position: absolute !important; /* Ensure position is absolute */
+                margin: 10px 0;
+            }
+
+            .dropdown-columns {
+                flex-direction: column;
+            }
+
+            .image-column {
+                width: 100%;
+            }
+
+            .column {
+                width: 100%;
+            }
+
+            .navbar .nav-link {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .navbar .dropdown-menu {
+                position: absolute !important; /* Ensure position is absolute */
+                float: none;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .navbar .dropdown-menu .dropdown-columns {
+                flex-direction: column;
+            }
+            .signup {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .navbar-collapse {
+                flex-direction: column;
+            }
+
+            .navbar-nav {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .navbar {
+                padding-left: 5%;
+                padding-right: 5%;
+                max-width: 55%;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .navbar .container-fluid {
+                max-width: 55%;
+            }
+            .dropdown-menu {
+                width: 55vw;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-black d-none d-lg-block desktop-nav">
+    <nav class="navbar navbar-expand-lg bg-black ">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="/static/images/shift_logo.png" alt="Shift">
@@ -25,14 +297,17 @@
                         <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Products
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:-365%;">
+                        <div class="dropdown-menu" aria-labelledby="productsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column image-column">
                                     <img src="/static/images/product.png" alt="Product Image">
                                 </div>
                                 <div class="column">
                                     <h5>AI Powered SaaS Products</h5>
-                                    <a class="dropdown-item" href="productAdminPortal"><i class="fas fa-camera"></i>Fleet Management & Optimization Admin Portal</a>
+                                    <a class="dropdown-item row" href="productAdminPortal">
+                                        <img class="icon col" style="width:6%;" src="/static/images/fleet.png">
+                                        <p class="col">Fleet Management & Optimization Admin Portal</p>
+                                    </a>
                                     <a class="dropdown-item" href="productCustomerApp"><i class="fas fa-cogs"></i>White-Label Customer App</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-car-crash"></i>Agent Operational App</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-map-signs"></i>White-Label Driver App</a>
@@ -52,7 +327,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Solutions
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown" style="margin-left:-470%;">
+                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column image-column">
                                     <img src="/static/images/solutions.png" alt="Solution Image">
@@ -85,7 +360,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="technologiesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Technologies
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown" style="margin-left:-465%;">
+                        <div class="dropdown-menu" aria-labelledby="solutionsDropdown">
                             <div class="dropdown-columns">
                                 <div class="column image-column">
                                     <img src="/static/images/technologies.png" alt="Solution Image">
@@ -105,7 +380,6 @@
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-handshake"></i>Integration Partners</a>
                                     <a class="dropdown-item" href="comingSoon"><i class="fas fa-code"></i>Developer Portal APIs</a>
                                 </div>
-
                             </div>
                         </div>
                     </li>
@@ -119,87 +393,23 @@
             </a>
             </div>
             </div>
-
         </div>
+    </nav>
+
+    <nav class="navbar navbar-dark bg-dark fixed-top d-lg-none">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/static/images/shift_logo.png" alt="Shift">
+      </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+       </button>
+    </div>
     </nav>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!--    <script>-->
 
-<!--    $(document).ready(function() {-->
-<!--        function adjustPadding() {-->
-<!--            if (window.innerWidth <= 768) {-->
-<!--                var navbarHeight = $('.navbar').outerHeight();-->
-<!--                var dropdownHeight = $('.dropdown-menu:visible').outerHeight() || 0;-->
-<!--                var totalPadding = navbarHeight + dropdownHeight;-->
-<!--                $('.content-container').css('padding-top', totalPadding);-->
-<!--            }-->
-<!--        }-->
-
-<!--        function removePadding() {-->
-<!--            if (window.innerWidth <= 768) {-->
-<!--                $('.content-container').css('padding-top', 0);-->
-<!--            }-->
-<!--        }-->
-
-<!--        // Adjust padding when toggler is clicked-->
-<!--        $('.navbar-toggler').on('click', function() {-->
-<!--             setTimeout(function() {-->
-<!--            adjustPadding();-->
-<!--        }, 0);// Adding slight delay for animation-->
-<!--            $('#navbarNav').collapse('toggle'); // Toggle collapse on click-->
-<!--        });-->
-
-<!--        // Adjust padding when dropdown is hovered-->
-<!--        $('.dropdown').on('mouseenter', function() {-->
-<!--            adjustPadding();-->
-<!--        });-->
-
-<!--        $('.dropdown').on('mouseleave', function() {-->
-<!--            var navbarHeight = $('.navbar').outerHeight();-->
-<!--            if (window.innerWidth <= 768) {-->
-<!--                $('.content-container').css('padding-top', navbarHeight);-->
-<!--            }-->
-<!--        });-->
-
-<!--        // Remove padding when navbar collapses back-->
-<!--        $('#navbarNav').on('hidden.bs.collapse', function () {-->
-<!--            removePadding();-->
-<!--        });-->
-
-<!--        // Adjust padding when navbar expands-->
-<!--        $('#navbarNav').on('shown.bs.collapse', function () {-->
-<!--            adjustPadding();-->
-<!--        });-->
-
-<!--        // Toggle dropdown on click and adjust padding-->
-<!--        $('.nav-link.dropdown-toggle').on('click', function(e) {-->
-<!--            e.preventDefault();-->
-<!--            var $dropdownMenu = $(this).next('.dropdown-menu');-->
-
-<!--            if ($dropdownMenu.is(':visible')) {-->
-<!--                $dropdownMenu.slideUp();-->
-<!--            } else {-->
-<!--                $('.dropdown-menu').slideUp(); // Hide all dropdown menus-->
-<!--                $dropdownMenu.slideDown();-->
-<!--            }-->
-
-<!--            adjustPadding();-->
-<!--        });-->
-
-<!--        // Adjust padding on window resize-->
-<!--        $(window).on('resize', function() {-->
-<!--            if (window.innerWidth > 768) {-->
-<!--                removePadding();-->
-<!--            } else {-->
-<!--                adjustPadding();-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-
-
-<!--    </script>-->
 </body>
 </html>
