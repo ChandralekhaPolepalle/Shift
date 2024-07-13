@@ -49,6 +49,7 @@ body {
     color: white;
     font-size: 16px;
     padding-right: 30px;
+    letter-spacing:0.08em;
 }
 
 .desktop-nav .nav-link:hover,
@@ -74,6 +75,7 @@ body {
 .desktop-nav .dropdown-item {
     color: white;
     padding: 5px 0;
+    letter-spacing:0.08em;
 }
 
 .navbar-toggler {
@@ -110,7 +112,7 @@ body {
 
 .desktop-nav .navbar-nav .dropdown:hover .dropdown-menu {
     display: flex;
-    margin-top: 0;
+    margin-top: 10%;
 }
 
 .desktop-nav .dropdown-columns {
@@ -164,9 +166,21 @@ body {
     padding: 2%;
 }
 
-@media (max-width: 768px) {
-    /* Add specific mobile styles if needed */
-}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    .navbar-brand img {
+        width: 150px;
+        animation: fadeInUp 1s ease-in-out;
+    }
 
 @media (max-width: 1024px) and (min-width: 768px) {
     .navbar {
