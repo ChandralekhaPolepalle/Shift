@@ -8,34 +8,70 @@
     <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 </head>
 <body>
     <section class="hkf-features-section">
         <h2 class="hkf-features-title" style="color: white;">Key Features</h2>
-        <div class="hkf-features-container">
-            <div class="hkf-feature active" id="feature-1">
-                <img src="static/images/inspection.png" alt="Inspection">
-                <h3 style="color: white; margin-top: 5%;">Inspection</h3>
-                <p style="color: #A2A1A3;">Assurance for top-notch quality, including dent and scratch detection.</p>
+        <div class="swiper-container hkf-features-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide hkf-feature" id="feature-1">
+                    <img src="static/images/inspection.png" alt="Inspection">
+                    <h3 style="color: white; margin-top: 5%;">Inspection</h3>
+                    <p style="color: #A2A1A3;">Assurance for top-notch quality, including dent and scratch detection.</p>
+                </div>
+                <div class="swiper-slide hkf-feature" id="feature-2">
+                    <img src="static/images/inventory.webp" alt="Inventory Management">
+                    <h3 style="color: white; margin-top: 5%;">Inventory Management</h3>
+                    <p style="color: #A2A1A3;">Driven by AI, we predict, optimize, and automate fleet operations.</p>
+                </div>
+                <div class="swiper-slide hkf-feature" id="feature-3">
+                    <img src="static/images/viewmap.jpg" alt="God's View Map">
+                    <h3 style="color: white; margin-top: 5%;">God's View Map</h3>
+                    <p style="color: #A2A1A3;">Monitor vehicles, assets, and driver locations on a single map.</p>
+                </div>
             </div>
-            <div class="hkf-feature" id="feature-2">
-                <img src="static/images/inventory.webp" alt="Inventory Management">
-                <h3 style="color: white; margin-top: 5%;">Inventory Management</h3>
-                <p style="color: #A2A1A3;">Driven by AI, we predict, optimize, and automate fleet operations.</p>
+            <div class="hkf-carousel-indicators">
+                <span class="hkf-indicator active" data-target="feature-1"></span>
+                <span class="hkf-indicator" data-target="feature-2"></span>
+                <span class="hkf-indicator" data-target="feature-3"></span>
             </div>
-            <div class="hkf-feature" id="feature-3">
-                <img src="static/images/viewmap.jpg" alt="God's View Map">
-                <h3 style="color: white; margin-top: 5%;">God's View Map</h3>
-                <p style="color: #A2A1A3;">Monitor vehicles, assets, and driver locations on a single map.</p>
-            </div>
-        </div>
-        <div class="hkf-carousel-indicators">
-            <span class="hkf-indicator active" data-target="feature-1"></span>
-            <span class="hkf-indicator" data-target="feature-2"></span>
-            <span class="hkf-indicator" data-target="feature-3"></span>
         </div>
     </section>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1, // Number of slides per view (adjust as needed for responsiveness)
+            spaceBetween: 30, // Space between slides
+            loop: true, // Enable loop mode
+            autoplay: {
+                delay: 2500, // Autoplay delay in milliseconds
+                disableOnInteraction: false, // Disable autoplay on user interaction
+            },
+            pagination: {
+                el: '.swiper-pagination', // Pagination container
+                clickable: true, // Enable clickable pagination
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // Next slide button
+                prevEl: '.swiper-button-prev', // Previous slide button
+            },
+            breakpoints: {
+                // Responsive breakpoints
+                768: {
+                    slidesPerView: 3, // Number of slides per view for desktop
+                    spaceBetween: 30, // Space between slides
+                }
+            }
+        });
+
+        // Indicator
         document.addEventListener("DOMContentLoaded", function() {
             const indicators = document.querySelectorAll('.hkf-indicator');
             const features = document.querySelectorAll('.hkf-feature');

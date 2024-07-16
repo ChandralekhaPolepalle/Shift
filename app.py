@@ -3,11 +3,11 @@ import json
 from flask import Flask, render_template, request, redirect, url_for
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-# load_dotenv()
+load_dotenv()
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 

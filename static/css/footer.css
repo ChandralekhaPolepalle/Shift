@@ -131,7 +131,9 @@ body {
 .footer-logo:hover {
     transform: scale(1.05);
 }
-
+ .svgicon{
+        margin-left:11%;
+    }
 @media (max-width: 1024px) and (min-width: 768px) {
     .footer {
         flex-direction: column;
@@ -152,6 +154,8 @@ body {
         left: 50%;
         transform: translateX(-50%);
     }
+
+
 }
 
 @media (max-width: 768px) {

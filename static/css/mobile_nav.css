@@ -71,6 +71,9 @@ body {
   padding: 0;
   margin: 10px 0;
   justify-content:center;
+  margin: 0; /* Remove margin to avoid overflow */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  max-height: 60vh; /* Limit the height to avoid overflow */
 }
 
 .offcanvas-body .nav-link::after {
