@@ -12,15 +12,14 @@
     <link href="static/css/features.css" rel="stylesheet">
     <style>
         body{
-            margin-left:7%;
-            margin-right:7%;
+            background-color: #16151A;
             font-family:'Archivo';
         }
 
         .pf-nav {
             text-align: center;
             padding: 20px;
-            background-color: #000;
+            background-color: #16151A;
         }
 
         .pf-tabs {
@@ -76,8 +75,8 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #;
+            color: #fff
             margin: 0;
             padding: 0;
         }
@@ -92,17 +91,28 @@
 
         .pf-carousel {
             position: relative;
-            max-width: 90%;
-            margin: auto;
+            max-width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin-left:5%;
+            margin-right:5%;
         }
 
         .pf-carousel-slide {
-            display: none;
+            position:relative;
+            width:100%;
+            height: 100%;
+            overflow:hidden;
         }
 
         .pf-carousel-slide img {
+            position: absolute;
+            top:0;
+            left:0;
             width: 100%;
-            border-radius: 10px;
+            height:100%;
+            object-fit: cover;
+            z-index:1;
         }
 
         .pf-carousel-controls {
@@ -112,17 +122,18 @@
             display: flex;
             justify-content: space-between;
             transform: translateY(-50%);
+            z-index:2;
         }
 
         .pf-carousel-controls span {
-
             padding: 10px;
-
             cursor: pointer;
+            z-index:2;
         }
 
         .pf-features {
-            padding: 40px 20px;
+            max-width: 75%;
+            margin: 0 auto;
         }
 
         .pf-features h2 {
@@ -174,12 +185,14 @@
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
+            z-index:2;
 
         }
 
         .text-overlay h1 {
             font-size: 64 px;
             margin: 0;
+            z-index:2;
         }
 
         .text-overlay p {
@@ -189,22 +202,26 @@
             opacity:70%;
         }
         .img-overlay {
+          top:25%;
+          left: 35%;
           position: absolute;
-          top: 50%;
-          left: 50%;
           transform: translate(-50%, -50%);
-          z-index: 1;
+          z-index: 2;
+          max-width: 100%;
+
         }
 
         .img-overlay img {
           display: block;
-          width: 100%;
-          max-width: 100%;
+          width:500px;
           height: auto;
+          z-index:2;
         }
+
 
         .pf-carousel-slide img {
             transition: transform 0.3s ease-in-out;
+            z-index:1;
         }
 
         .pf-carousel-slide:hover img {
@@ -238,9 +255,42 @@
 
 
         @media (max-width: 768px) {
-            .pf-feature-card {
-                width: calc(50% - 20px);
-            }
+
+         .pf-carousel {
+            position: relative;
+            max-width: 100%;
+            height: 40vh;
+            overflow: hidden;
+            margin-left:5%;
+            margin-right:5%;
+        }
+
+        .pf-carousel-slide {
+            max-width:100%;
+        }
+
+        .pf-carousel-slide img {
+            max-width: 100%;
+
+        }
+
+        .img-overlay {
+          top:25%;
+          left: 50%;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          width: 70%;
+
+        }
+
+        .img-overlay img {
+          display: block;
+          width:500px;
+          height: auto;
+          z-index:2;
+        }
+
         }
 
         @media (max-width: 480px) {
@@ -258,6 +308,48 @@
             .text-overlay p {
                 font-size: 0.4rem;
             }
+        }
+
+        @media (min-width: 1600px){
+            .pf-carousel {
+            position: relative;
+            max-width: 80%;
+            height: 75vh;
+            overflow: hidden;
+            margin-left:15%;
+            margin-right:10%;
+
+        }
+        .features-section {
+            margin-left:15%;
+        }
+
+        .pf-carousel-slide {
+            max-width:100%;
+        }
+
+        .pf-carousel-slide img {
+            max-width: 100%;
+
+        }
+
+        .img-overlay {
+          top:25%;
+          left: 50%;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          width: 70%;
+
+        }
+
+        .img-overlay img {
+          display: block;
+          width:500px;
+          height: auto;
+          z-index:2;
+          left:22%;
+        }
         }
     </style>
 </head>
@@ -303,7 +395,7 @@
                 </div>
             </section>
             <section class="features-section">
-        <h2>Features<span class="subtitle">. to meet the unique needs of your business</span></h2>
+        <h2>Features<span class="subtitle"> to meet the unique needs of your business</span></h2>
         <div class="features-container">
             <a>
             <div class="feature-card">
@@ -383,7 +475,7 @@
                 </div>text
             </section>
             <section class="features-section">
-        <h2>Features<span class="subtitle">. to meet the unique needs of your business</span></h2>
+        <h2>Features<span class="subtitle"> to meet the unique needs of your business</span></h2>
         <div class="features-container">
 
             <a>
@@ -474,7 +566,7 @@
                 </div>
             </section>
             <section class="features-section">
-        <h2>Features<span class="subtitle">. to meet the unique needs of your business</span></h2>
+        <h2>Features<span class="subtitle"> to meet the unique needs of your business</span></h2>
         <div class="features-container">
 
             <a>

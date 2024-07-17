@@ -10,7 +10,7 @@
 
     <style>
         body {
-            background-color: #000;
+            background-color: #16151A;
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -22,7 +22,7 @@
         .ps-header {
             text-align: center;
             padding: 20px;
-            background-color: #000;
+            background-color: #16151A;
             font-family:'Archivo';
         }
 
@@ -93,22 +93,64 @@
             font-family:'Archivo';
         }
 
-        .ps-image-container {
+       .ps-image-container {
             flex: 1;
             padding-right: 20px;
             text-align: right;
             transition: transform 0.3s ease, filter 0.3s ease;
-            filter: brightness(0.7);
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+            animation: float 6s ease-in-out infinite; /* Slow floating animation */
+        }
+
+        .ps-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+            z-index: 1; /* Ensures the overlay is above the image */
         }
 
         .ps-image-container img {
             max-width: 100%;
+            border-radius: 4px;
+            display: block;
+            transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and filter */
+            position: relative;
+            z-index: 0; /* Ensures the image is below the overlay */
+            filter: contrast(1.1) saturate(1.2); /* Enhance image colors */
         }
 
-        .ps-image-container:hover {
-            transform: scale(1.05);
-            filter: brightness(1);
+        .ps-image-container:hover::before {
+            opacity: 0.8; /* Stronger overlay on hover */
         }
+
+        .ps-image-container:hover img {
+            transform: scale(1.05); /* Slight zoom on hover */
+            filter: brightness(0.9); /* Slightly brighten the image on hover */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Soft glow effect */
+        }
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
 
         .ps-text-container {
             flex: 1;
@@ -164,7 +206,7 @@
 
         .ps-content.ps-active {
             display: flex;
-            background-color: #000;
+            background-color: #16151A;
         }
 
         @media (max-width: 768px) {
@@ -189,7 +231,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color:#16151A;">
     <div class="container-fluid">
     <header class="ps-header">
         <h1 class="ps-title">SHIFT Product Suites</h1>

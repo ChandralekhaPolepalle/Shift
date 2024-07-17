@@ -1,0 +1,341 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar-brand img {
+  width: 150px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #000 0%, #001 100%);
+  padding: 15px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
+}
+
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(90deg, #000 0%, #001 100%);
+  padding: 20px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10px 10px;
+  justify-content:center;
+  padding-top:20%;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.offcanvas-body .navbar-nav {
+  width: 100%;
+  padding: 0;
+}
+
+.offcanvas-body .nav-item {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.offcanvas-body .nav-link {
+  color: white;
+  font-family: 'Archivo', sans-serif;
+  background: linear-gradient(90deg, #000 0%, #001 100%);
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+}
+
+.offcanvas-body .nav-link:hover {
+  background-color: #333;
+}
+
+.offcanvas-body .dropdown-menu {
+  background: linear-gradient(90deg, #000 0%, #001 100%);
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  margin: 10px 0;
+  justify-content:center;
+  margin: 0; /* Remove margin to avoid overflow */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  max-height: 60vh; /* Limit the height to avoid overflow */
+}
+
+.offcanvas-body .nav-link::after {
+  display: none;
+}
+
+.offcanvas-body .dropdown-item {
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1rem;
+  text-wrap: wrap;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  border-radius: 5px;
+  letter-spacing: 0.07em;
+}
+
+.offcanvas-body .dropdown-item:hover {
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.offcanvas-body .dropdown-divider {
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #444;
+  border: 0;
+}
+
+
+.offcanvas-body .btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border-radius: 5px;
+  letter-spacing:0.08em;
+}
+
+.offcanvas-body .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.offcanvas-body .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ -----------------------------------desktop nav----------------------------------------
+ /* nav.css */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Archivo', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-nav {
+    height: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.desktop-nav .container-fluid {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-logo img,
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    transition: width 0.3s ease;
+}
+
+.navbar-logo img:hover,
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.desktop-nav .nav-link {
+    color: white;
+    font-size: 16px;
+    padding-right: 30px;
+    letter-spacing:0.08em;
+}
+
+.desktop-nav .nav-link:hover,
+.desktop-nav .nav-link:focus {
+    color: white;
+    transform: scale(1.13);
+}
+
+.desktop-nav .dropdown-menu {
+    margin-top:15%;
+    background: linear-gradient(90deg, #000 0%, #001 100%);
+    border-top: 3px solid #2860E1;
+    width: 85vw;
+    left: 0;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin: 0 auto;
+    box-shadow: none;
+}
+
+.desktop-nav .dropdown-item {
+    color: white;
+    padding: 5px 0;
+    letter-spacing:0.08em;
+}
+
+.navbar-toggler {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    color: #2860E1;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.signup {
+    padding-top: 0.10%;
+    padding-bottom: 0.10%;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+}
+
+.signup button,
+.signup a {
+    text-decoration: none;
+    outline: none;
+}
+
+.desktop-nav .navbar-nav .dropdown:hover .dropdown-menu {
+    display: flex;
+    margin-top:15%;
+}
+
+.desktop-nav .dropdown-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.desktop-nav .column {
+    flex: 1;
+    padding: 10px;
+    color: #fff;
+}
+
+.image-column {
+    flex: 0 0 30%;
+}
+
+.desktop-nav .column img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.desktop-nav .column h5 {
+    border-bottom: 1px solid #2860E1;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.desktop-nav .column a {
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.desktop-nav .column a:hover {
+    background-color: transparent;
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.desktop-nav .dropdown-item i {
+    margin-right: 10px;
+    padding: 2%;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    .navbar-brand img {
+        width: 150px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+        max-width: 55%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .desktop-nav .container-fluid {
+        max-width: 55%;
+    }
+    .desktop-nav dropdown-menu {
+        width: 55vw;
+    }
+}
+
