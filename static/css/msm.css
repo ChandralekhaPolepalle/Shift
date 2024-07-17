@@ -3,7 +3,7 @@ html {
 }
 body.msm-body {
             font-family:'Archivo';
-            background-color: #000;
+            background-color:#15141B;
             color: white;
         }
         .msm-container {
@@ -12,6 +12,10 @@ body.msm-body {
         .msm-module-list {
             list-style: none;
             margin-top:5%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            height:100%;
         }
         .msm-module-list li {
             padding: 15px 0;
@@ -19,6 +23,9 @@ body.msm-body {
             font-size: 18px;
             transition: background 0.3s ease, transform 0.3s ease, border-left 0.3s ease;
             position: relative;
+            display:flex;
+            flex-direction: column;
+            justufy-content: center;
         }
 
         .msm-module-list li::before {
@@ -51,19 +58,49 @@ body.msm-body {
             color: #ACACAC;
             font-size:12px;
             margin-left:10%;
+            text-wrap: nowrap;
         }
-        .msm-container img {
-            padding: 10%;
-            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
 
+        .row{
+            display: flex;
+            align-items:center;
         }
+
+         .msm-container img {
+            padding: 10%;
+            transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease, filter 0.6s ease;
+            position: relative;
+            filter: brightness(0.9) saturate(1.2);
+            border-radius: 10px; /* Optional: To add rounded corners */
+        }
+
         .msm-container img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            filter: brightness(1) saturate(1.5);
         }
+
+        .msm-container img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; /* Optional: To add rounded corners */
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+            transition: opacity 0.6s ease;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .msm-container img:hover::before {
+            opacity: 1;
+        }
+
+
         .ef-effectiveness-section {
-            background-color: #000;
+            background-color: #15141B;
             color: white;
             padding: 50px 20px;
             text-align: center;
@@ -175,7 +212,7 @@ body.msm-body {
                 max-width:80%;
             }
             .ef-effectiveness-section {
-                background-color: #000;
+                background-color: #16151A;
                 color: white;
                 padding: 0;
                 width: 50%;

@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body style="background-color:#15141B;">
 
    {% include 'nav.html' %}
    {% include 'mobile_nav.html' %}
@@ -26,18 +26,17 @@
    <!-- Main content -->
 
     <div class="main-content">
-    <div class="main-content-text">
-        <h5>AI-DRIVEN ALL-IN-ONE</h5>
-        <h1>FLEET MANAGEMENT PLATFORM</h1>
-        <p>SHIFT fleet management tool provides car subscription, car sharing, short-term rental, digital dealership, loaner management, telematics solutions.</p>
-        <a href="#subscribe-container" class="btn-custom">Free Trial</a>
-        <a href="products" class="btn-see-more">See more &gt;</a>
+        <div class="main-content-text">
+            <h5>AI-DRIVEN ALL-IN-ONE</h5>
+            <h1>FLEET MANAGEMENT PLATFORM</h1>
+            <p>SHIFT fleet management tool provides car subscription, car sharing, short-term rental, digital dealership, loaner management, telematics solutions.</p>
+            <a href="#subscribe-container" class="btn-custom">Free Trial</a>
+            <a href="products" class="btn-see-more">See more &gt;</a>
+        </div>
+        <div class="image-container">
+            <img src="/static/images/home_background_enhanced.png" class="img-fluid" alt="home bg Image">
+        </div>
     </div>
-    <div class="image-container">
-        <div class="image-overlay"></div>
-        <img src="/static/images/home_bg_new.JPG" class="img-fluid" alt="home bg Image">
-    </div>
-</div>
     {% include 'product_suites.html' %}
     {% include 'home_keyfeatures.html' %}
     {% include 'business.html' %}

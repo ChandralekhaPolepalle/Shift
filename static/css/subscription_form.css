@@ -9,7 +9,7 @@ html {
             margin: 0;
             padding: 0;
             font-family: 'Archivo';
-            background-color: #000;
+            background-color: #16151A;
             color: white;
         }
 
@@ -18,15 +18,15 @@ html {
             justify-content: center;
             align-items: center;
             margin-top: -5%;
-            min-height: 100vh;
-            background-color: #000;
+            min-height: 75vh;
+            background-color: #16151A;
             padding: 20px;
 
         }
 
         .subscribe-form {
             position: relative;
-            background-color: #000;
+            background-color: #16151A;
             padding: 60px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@ html {
         }
 
         .subscribe-form .form-control {
-            background-color: #000;
+            background-color:#16151A;
             opacity:0.7;
             border: 1px solid #3a4a6f;
             color: white;
@@ -123,7 +123,7 @@ html {
         }
 
         .subscribe-form .form-check-input:checked {
-            background-color: #001;
+            background-color: #16151A;
             opacity:0.7;
             border-color: var(--primary-color);
             box-shadow: 0 0 5px var(--primary-color);
@@ -149,7 +149,7 @@ html {
         }
 
         .subscribe-form .btn-primary {
-            background-color: #000;
+            background-color: #16151A;
             border: 1px solid #3a3a68;
             color: white;
             padding: 10px 20px;
@@ -182,7 +182,7 @@ html {
                 justify-content: center;
                 align-items: center;
                 min-height: 75vh;
-                background-color: #000;
+                background-color: #16151A;
 
             }
             .subscribe-form {
@@ -199,7 +199,7 @@ html {
 
 @media (min-width: 1600px) {
     .subscribe-container {
-        margin-top: -15%;
+        margin-top: -10%;
         margin-left: auto;
         margin-right: auto;
         max-width: 65%;

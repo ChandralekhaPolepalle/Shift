@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-color: #000;
+    background-color: transparent;
     color: #fff;
     font-family: 'Archivo', sans-serif;
     margin: 0;
@@ -32,11 +32,12 @@ body {
     justify-content: center;
 }
 
-.navbar-logo img,
-.navbar-brand img {
+.desktop-nav .navbar-logo img,
+.desktop-nav .navbar-brand img {
     max-width: 100%;
     height: auto;
     width: 150px;
+    margin-left: -22%;
     transition: width 0.3s ease;
 }
 
@@ -58,18 +59,38 @@ body {
     transform: scale(1.13);
 }
 
+.desktop-nav .products {
+
+    background-image: url('/static/images/products.png');
+    opacity:0.98;
+    margin-top:15%;
+}
+
+.desktop-nav .solutions {
+    background-image: url('/static/images/Solutions_bg.png');
+    opacity:0.96;
+    margin-top:15%;
+}
+
+
+.desktop-nav .technologies {
+    background-image: url('/static/images/Technologies_bg.png');
+    opacity:0.96;
+    margin-top:15%;
+}
+
 .desktop-nav .dropdown-menu {
     margin-top:15%;
-    background: linear-gradient(90deg, #000 0%, #001 100%);
+    background-size:cover;
     border-top: 3px solid #2860E1;
-    width: 85vw;
+    width: 86vw;
     left: 0;
     padding: 20px;
     display: none;
     position: absolute;
     top: 100%;
-    margin: 0 auto;
     box-shadow: none;
+
 }
 
 .desktop-nav .dropdown-item {
@@ -110,9 +131,10 @@ body {
     outline: none;
 }
 
+
 .desktop-nav .navbar-nav .dropdown:hover .dropdown-menu {
     display: flex;
-    margin-top: 10%;
+    margin-top: 15%;
 }
 
 .desktop-nav .dropdown-columns {
@@ -126,6 +148,7 @@ body {
     flex: 1;
     padding: 10px;
     color: #fff;
+    margin-left: 5%;
 }
 
 .image-column {
@@ -191,10 +214,26 @@ body {
 }
 
 @media (min-width: 1600px) {
+
+    .products{
+        margin-left:-263% !important;
+    }
+    .solutions{
+        margin-left:-367% !important;
+    }
+    .technologies{
+        margin-left:-375% !important;
+    }
     .desktop-nav .container-fluid {
         max-width: 55%;
     }
-    .desktop-nav dropdown-menu {
-        width: 55vw;
+    .desktop-nav .navbar-logo img,
+    .desktop-nav .navbar-brand img {
+        margin-left: 20%;
+    }
+
+    .desktop-nav .dropdown-menu {
+        width: 53vw;
+        margin-left:15%;
     }
 }
