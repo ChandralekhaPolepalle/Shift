@@ -3,22 +3,22 @@ import threading
 import json
 import logging
 from flask import Flask, render_template, request, redirect, url_for
-from google.oauth2.service_account import Credentials
-from googleapiclient.discovery import build
-from google.oauth2 import service_account
+# from google.oauth2.service_account import Credentials
+#
+# from google.oauth2 import service_account
 from flask import Flask, request, jsonify
 import httpx
 import smtplib
 from flask_mail import Mail, Message
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-# load_dotenv()
+load_dotenv()
 
 HUBSPOT_ACCESS_TOKEN = os.getenv('HUBSPOT_ACCESS_TOKEN_FROM_ENV')
 
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/contacts']
+# SCOPES = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/contacts']
 
 # Configuring Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -31,25 +31,25 @@ app.config['DEBUG'] = True
 
 mail = Mail(app)
 
-# Load Google credentials from environment variable
-try:
-    google_credentials = os.getenv('GOOGLE_CREDENTIALS')
+# # Load Google credentials from environment variable
+# try:
+#     google_credentials = os.getenv('GOOGLE_CREDENTIALS')
+#
+#     if google_credentials is None:
+#         raise ValueError("GOOGLE_CREDENTIALS environment variable is not set.")
+#     credentials_info = json.loads(google_credentials)
+#     credentials = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
+#
+#
+# except Exception as e:
+#     raise ValueError("Failed to load Google credentials. Ensure the environment variable is set correctly.") from e
 
-    if google_credentials is None:
-        raise ValueError("GOOGLE_CREDENTIALS environment variable is not set.")
-    credentials_info = json.loads(google_credentials)
-    credentials = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
-
-
-except Exception as e:
-    raise ValueError("Failed to load Google credentials. Ensure the environment variable is set correctly.") from e
-
-# Google Sheets API setup
-SPREADSHEET_ID = '1VGBJr6zFSilCvF7jCv_0ejlUR2CcST_QHCR4bZDXkwE'
-RANGE_NAME = 'SHIFT Subscriptions!A2:F2'
-service = build('sheets', 'v4', credentials=credentials)
-people_service = build('people', 'v1', credentials=credentials)
-sheet = service.spreadsheets()
+# # Google Sheets API setup
+# SPREADSHEET_ID = '1VGBJr6zFSilCvF7jCv_0ejlUR2CcST_QHCR4bZDXkwE'
+# RANGE_NAME = 'SHIFT Subscriptions!A2:F2'
+# service = build('sheets', 'v4', credentials=credentials)
+# people_service = build('people', 'v1', credentials=credentials)
+# sheet = service.spreadsheets()
 
 # GOOGLE_CREDENTIALS = os.getenv('GOOGLE_CREDENTIALS')
 # credentials_info = json.loads(GOOGLE_CREDENTIALS)
@@ -88,28 +88,28 @@ def subscription_form():
         print("---------------------------")
         print(body)
 
-        try:
-            sheet.values().append(
-                spreadsheetId=SPREADSHEET_ID,
-                range=RANGE_NAME,
-                valueInputOption='RAW',
-                body=body
-            ).execute()
-
-            # Add to Google Contacts
-            contact_body = {
-                'names': [{'givenName': name}],
-                'emailAddresses': [{'value': email}],
-                'memberships': [{'contactGroupMembership': {'contactGroupResourceName': 'contactGroups/SHIFT Subscriptions'}}]
-            }
-            contact_response = people_service.people().createContact(body=contact_body).execute()
-            logging.debug(f"Google Contacts response: {contact_response}")
-
-            message = "Thank you for subscribing!"
-        except Exception as e:
-            logging.error(f"An error occurred: {e}")
-            message = f"An error occurred: {e}"
-            message = "Please provide vaild details"
+        # try:
+        #     sheet.values().append(
+        #         spreadsheetId=SPREADSHEET_ID,
+        #         range=RANGE_NAME,
+        #         valueInputOption='RAW',
+        #         body=body
+        #     ).execute()
+        #
+        #     # Add to Google Contacts
+        #     contact_body = {
+        #         'names': [{'givenName': name}],
+        #         'emailAddresses': [{'value': email}],
+        #         'memberships': [{'contactGroupMembership': {'contactGroupResourceName': 'contactGroups/SHIFT Subscriptions'}}]
+        #     }
+        #     contact_response = people_service.people().createContact(body=contact_body).execute()
+        #     logging.debug(f"Google Contacts response: {contact_response}")
+        #
+        #     message = "Thank you for subscribing!"
+        # except Exception as e:
+        #     logging.error(f"An error occurred: {e}")
+        #     message = f"An error occurred: {e}"
+        #     message = "Please provide vaild details"
 
         url = "https://api.hubapi.com/crm/v3/objects/contacts"
 
