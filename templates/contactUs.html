@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Archivo', sans-serif;
+            background-color: #15141B;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            height: 75vh;
+            max-height: 600px;
+            padding: 20px;
+            width: 60%;
+            max-width: 1000px;
+            margin: auto;
+            margin-bottom: 10%;
+            margin-top: 2%;
+        }
+
+        .contact-info {
+            background-color: #101015;
+            padding: 2rem;
+            max-width: 400px;
+            color: white;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgb(58 74 111 / 40%);
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1rem;
+
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info ul li {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info .icon {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            color:#fff;
+            font-weight: lighter;
+            font-size:1rem;
+        }
+
+        .contact-info .map {
+            margin-top: 1rem;
+        }
+
+        .contact-form {
+            background-color: #101015;
+            padding: 2rem;
+            max-width: 600px;
+            color: black;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 4px rgb(58 74 111 / 40%);
+        }
+
+        .contact-form h2 {
+                margin-bottom: 2rem;
+                color: #fff;
+                font-family: 'Archivo';
+                text-align: left;
+        }
+
+        .contact-form .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form .form-group label {
+            color: white;
+        }
+
+        .form-control {
+            background-color:#101015 !important;
+            opacity:1;
+            border: 1px solid #3a4a6f !important;
+            color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            width: 80%;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-group input,
+        .contact-form .form-group textarea {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+
+        .contact-form .form-group textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                width: 80%;
+            }
+
+            .contact-info {
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Mobile Styling */
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                width: 100%;
+            }
+
+            .contact-info
+             {
+                max-width: 100%;
+                padding: 1rem;
+            }
+            .contact-form{
+                width: 100%;
+                margin-bottom: 135%;
+            }
+
+            .contact-info ul li {
+                font-size: 0.875rem;
+            }
+
+            .contact-form .form-group input,
+            .contact-form .form-group textarea {
+                font-size: 0.875rem;
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+    {% include 'mobile_nav.html' %}
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Let's get in touch</h2>
+            <p>We're open for any suggestion or just to have a chat</p>
+            <ul>
+                <li>
+                    <p class="icon"><i class="fa-solid fa-phone"></i></p>
+                    <p>+ 1234 567 898</p>
+                </li>
+                <li>
+                    <p class="icon"><i class="fa-solid fa-envelope"></i></p>
+                    <p>info@shiftgroup.ca</p>
+                </li>
+                 <li>
+                    <p class="icon"><i class="fa-solid fa-location-dot"></i></p>
+                    <p>1457 McCowan Rd, Toronto, ON M1S 5K7</p>
+                </li>
+                <li class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5760.830946748444!2d-79.25790932399042!3d43.784991171096074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d105eeceaec9%3A0xfce5307d65ed79a!2s1457%20McCowan%20Rd%2C%20Scarborough%2C%20ON%20M1S%205K7!5e0!3m2!1sen!2sca!4v1721614703534!5m2!1sen!2sca"
+                        width="300"
+                        height="150"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </li>
+
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h2>Quick Contact</h2>
+            <form action="/contactUs" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                    <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="btn-custom">Send Message</button>
+            </form>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+
+</body>
+</html>

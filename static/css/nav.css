@@ -63,24 +63,24 @@ body {
 
     background-image: url('/static/images/products.png');
     opacity:0.98;
-    margin-top:15%;
+    margin-top:0;
 }
 
 .desktop-nav .solutions {
     background-image: url('/static/images/Solutions_bg.png');
     opacity:0.96;
-    margin-top:15%;
+    margin-top:0;
 }
 
 
 .desktop-nav .technologies {
     background-image: url('/static/images/Technologies_bg.png');
     opacity:0.96;
-    margin-top:15%;
+    margin-top:0;
 }
 
 .desktop-nav .dropdown-menu {
-    margin-top:15%;
+    margin-top:0;
     background-size:cover;
     border-top: 3px solid #2860E1;
     width: 86vw;
@@ -91,6 +91,11 @@ body {
     top: 100%;
     box-shadow: none;
 
+}
+
+.desktop-nav .navbar-nav .dropdown:hover .dropdown-menu,
+.desktop-nav .dropdown-menu:hover {
+    display: flex;
 }
 
 .desktop-nav .dropdown-item {
@@ -134,7 +139,7 @@ body {
 
 .desktop-nav .navbar-nav .dropdown:hover .dropdown-menu {
     display: flex;
-    margin-top: 15%;
+    margin-top: 0;
 }
 
 .desktop-nav .dropdown-columns {

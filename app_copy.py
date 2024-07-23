@@ -1,35 +1,18 @@
 import os
-import threading
 import json
 import logging
 from flask import Flask, render_template, request, redirect, url_for
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
+from dotenv import load_dotenv
 from google.oauth2 import service_account
-from flask import Flask, request, jsonify
-import httpx
-import smtplib
-from flask_mail import Mail, Message
-# from dotenv import load_dotenv
+
 
 app = Flask(__name__)
 
-# load_dotenv()
-
-HUBSPOT_ACCESS_TOKEN = os.getenv('HUBSPOT_ACCESS_TOKEN_FROM_ENV')
+load_dotenv()
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/contacts']
-
-# Configuring Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'tech@shiftgroup.ca'
-app.config['MAIL_PASSWORD'] = 'rddh vikr ojtc sboz'
-app.config['MAIL_DEBUG'] = True
-app.config['DEBUG'] = True
-
-mail = Mail(app)
 
 # Load Google credentials from environment variable
 try:
@@ -79,14 +62,9 @@ def subscription_form():
         company_name = request.form['companyName']
         company_website = request.form['companyWebsite']
         subscribe_check = 'Yes' if 'subscribeCheck' in request.form else 'No'
-        interested_solutions = request.form.getlist('interestedSolution')
-        fleet_size = request.form['fleetSize']
-        interested_solutions_str = ', '.join(interested_solutions)
 
-        values = [[name,email, company_name, company_website,subscribe_check,interested_solutions_str,fleet_size]]
+        values = [[name,email, company_name, company_website,subscribe_check,'NA']]
         body = {'values': values}
-        print("---------------------------")
-        print(body)
 
         try:
             sheet.values().append(
@@ -110,35 +88,6 @@ def subscription_form():
             logging.error(f"An error occurred: {e}")
             message = f"An error occurred: {e}"
             message = "Please provide vaild details"
-
-        url = "https://api.hubapi.com/crm/v3/objects/contacts"
-
-        data = {
-            "properties": {
-                "firstname": name,
-                "email": email,
-                "company":company_name,
-                "website":company_website,
-                "subscription":subscribe_check,
-                "interested_solution": interested_solutions_str,
-                "fleet_size":fleet_size
-
-            }
-        }
-
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {HUBSPOT_ACCESS_TOKEN}"
-        }
-
-        response = httpx.post(url, json=data, headers=headers)
-
-        if response.status_code == 201:
-            print("Contact added successfully")
-
-        else:
-            print(response.json())
-
 
     return render_template('index.html')
 
@@ -196,63 +145,6 @@ def MobileNav():
 @app.route('/mobileDesktopNav')
 def MobileDesktopNav():
     return render_template('mobile_desktop_nav.html')
-
-@app.route('/productDriverApp')
-def pDriverApp():
-    return render_template('p_driver_app.html')
-
-@app.route('/productAgentOperationalApp')
-def pOperationalApp():
-    return render_template('p_operational_app.html')
-
-@app.route('/productEldReport')
-def pEldReport():
-    return render_template('p_eld_report.html')
-
-@app.route('/productAIDashCam')
-def pAiDashCam():
-    return render_template('p_ai_dash_cam.html')
-
-@app.route('/productTracking')
-def pTracking():
-    return render_template('p_tracking.html')
-
-@app.route('/productDigitalKey')
-def pDigitalKey():
-    return render_template('p_digital_key.html')
-
-def send_async_email(app, msg):
-    with app.app_context():
-        try:
-            mail.send(msg)
-            print("Email sent successfully!")
-        except Exception as e:
-            print(f"Failed to send email: {e}")
-            logging.error(f"Error sending email: {e}")
-
-@app.route('/contactUs', methods=['GET', 'POST'])
-def contactUs():
-    if request.method == 'POST':
-        print("TEST")
-        name = request.form['name']
-        email = request.form['email']
-        subject = request.form['subject']
-        message = request.form['message']
-
-        msg = Message('SHIFT Contact Us Form Submission', sender='tech@shiftgroup.ca', recipients=['tech@shiftgroup.ca'])
-        msg.body = f"Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}"
-
-        thread = threading.Thread(target=send_async_email, args=(app, msg))
-        thread.start()
-
-        # try:
-        #     mail.send(msg)
-        #     print("Email sent successfully!")
-        # except Exception as e:
-        #     print(f"Failed to send email: {e}")
-        #     logging.error(f"Error sending email: {e}")
-
-    return render_template('contactUs.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
