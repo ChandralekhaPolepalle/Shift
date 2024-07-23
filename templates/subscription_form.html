@@ -21,20 +21,65 @@
         <div class="form-container">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address *" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="First Name *" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="businessType" name="businessType" placeholder="Business Type">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address *" >
                 </div>
+
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name *" required>
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name *" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="services" name="services" placeholder="Services">
+                    <input type="text" class="form-control" id="companyWebsite" name="companyWebsite" placeholder="Company Website">
                 </div>
             </div>
+            <div class="form-row">
+            <div class="dropdown col-md-6">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Interested Solution
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="fleetManagement" name="interestedSolution" value="Fleet Management">
+                        <label for="fleetManagement">Fleet Management</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="carSubscription" name="interestedSolution" value="Car Subscription">
+                        <label for="carSubscription">Car Subscription</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="shortTermRental" name="interestedSolution" value="Short-term Rental">
+                        <label for="shortTermRental">Short-term Rental</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="digitalDealership" name="interestedSolution" value="Digital Dealership">
+                        <label for="digitalDealership">Digital Dealership</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="loanerManagement" name="interestedSolution" value="Loaner Management">
+                        <label for="loanerManagement">Loaner Management</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown col-md-6">
+                <button id="fleetSizeDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Fleet Size
+                </button>
+                 <ul class="dropdown-menu">
+                    <li class="dropdown-item" data-value="Fleet Size (>50)">Fleet Size (>50)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>100)">Fleet Size (>100)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>500)">Fleet Size (>500)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>1000)">Fleet Size (>1000)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>1000+)">Fleet Size (>1000+)</li>
+                </ul>
+                <input type="hidden" id="fleetSize" name="fleetSize">
+            </div>
+        </div>
+
+
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -48,4 +93,28 @@
     </form>
 </div>
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
+        dropdown.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('#fleetSizeDropdown ~ .dropdown-menu .dropdown-item').forEach(function(item) {
+                item.addEventListener('click', function () {
+                    var button = document.getElementById('fleetSizeDropdown');
+                    button.innerText = item.getAttribute('data-value');
+                    var hiddenInput = document.getElementById('fleetSize');
+                    var value = item.getAttribute('data-value');
+                    button.innerText = value;
+                    hiddenInput.value = value;
+                });
+            });
+        });
+</script>
+
 </html>

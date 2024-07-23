@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Label Customer App</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="static/css/home.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    {% include 'nav.html' %}
+   {% include 'mobile_nav.html' %}
+   <!-- Main content -->
+    <div class="main-content">
+        <div class="main-content-text">
+            <p>Products > AI Dash Cam</p>
+<!--            <h5>WHITE-LABEL</h5>-->
+            <h1>AI DASH CAM</h1>
+            <p>Connect, automate, and manage physical operations with a fully integrated product suite. SHIFT combines ease of use with constantly evolving features to help you stay ahead.</p>
+            <a href="#subscribe-container" class="btn-custom">Free Trial</a>
+            <a href="comingSoon" class="btn-see-more">See more &gt;</a>
+        </div>
+        <div class="image-container">
+            <img src="/static/images/Customer App.png" class="img-fluid" alt="Customer App Image">
+        </div>
+    </div>
+
+
+    {% include 'customer_app_msm.html' %}
+    {% include 'subscription_form.html' %}
+    {% include 'footer.html' %}
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,4 +1,58 @@
-html {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/subscription_form.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="subscribe-container" id="subscribe-container">
+    <form class="subscribe-form" action="/subscription_form" method="POST">
+        <h2>Subscribe</h2>
+        {% if message %}
+        <div class="alert alert-success msg" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="First Name *" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address *" >
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name *" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="companyWebsite" name="companyWebsite" placeholder="Company Website">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="form-check col-md-6">
+                <input type="checkbox" class="form-check-input" id="subscribeCheck" name="subscribeCheck">
+                <label class="form-check-label" for="subscribeCheck">Agree to receive email from SHIFT and stay up-to-date.</label>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
+<style>
+    html {
     scroll-behavior: smooth;
 }
 :root {
@@ -84,9 +138,9 @@ html {
             color: white;
         }
 
-        .subscribe-form .form-control, {
+        .subscribe-form .form-control {
             background-color:#16151A;
-            opacity:1;
+            opacity:0.7;
             border: 1px solid #3a4a6f;
             color: white;
             padding: 10px;
@@ -94,74 +148,12 @@ html {
             border-radius: 5px;
             width: 80%;
             transition: all 0.3s ease;
-        }
-
-        .subscribe-form .dropdown-toggle {
-            background-color:#16151A;
-            border: 1px solid #3a4a6f;
-            color: white;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            width: 80%;
-            transition: all 0.3s ease;
-        }
-        .subscribe-form .dropdown-menu{
-            margin-top: 10%;
-            background-color:#16151A;
-            border: 1px solid #3a4a6f;
-            color: white;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            width: 80%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .dropdown-item{
-            cursor: pointer;
-            color: white !important;
-        }
-
-
-        .dropdown-menu .dropdown-item:focus, .dropdown-menu .dropdown-item:hover {
-            opacity: 0.8;
-            background-color: transparent !important;
-            color: inherit;
-            transform: scale(1.02);
-        }
-
-        .dropdown-item:focus, .dropdown-item:hover {
-            background-color: transparent !important;
-            opacity: 1;
-        }
-
-
-        .dropdown .btn-secondary {
-            background-color: #16151A !important;
-            border: 1px solid #3a4a6f;
-            color: #fff;
-            font-family: 'Archivo';
-            text-align: left;
-            padding-left: 10px;
-        }
-
-        .dropdown .btn-secondary:hover,
-        .dropdown .btn-secondary:focus,
-        .dropdown .btn-secondary:active {
-            border-color: var(--primary-color);
-            background-color:#16151A;
-        }
-
-
-        .dropdown .btn-secondary::after {
-            display: none;
         }
 
         .subscribe-form .form-control:hover,
         .subscribe-form .form-control:focus {
             border-color: var(--primary-color);
-            background-color:#16151A;
+            box-shadow: 0 0 5px var(--primary-color);
         }
 
         .subscribe-form .form-check {
@@ -273,11 +265,8 @@ html {
                 margin-top:10%;
             }
             .subscribe-form .form-check-input {
-                width: 20px;
-                height: 20px;
-            }
-            .dropdown-item label{
-                text-wrap:wrap;
+                width: 40px;
+                height: 25px;
             }
         }
 
@@ -289,3 +278,4 @@ html {
         max-width: 65%;
     }
 }
+</style>
