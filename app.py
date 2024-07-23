@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 # load_dotenv()
 
-HUBSPOT_ACCESS_TOKEN = "pat-na1-2fcd038b-0c6d-4d85-9d15-f1134485bc2a"
+HUBSPOT_ACCESS_TOKEN = os.getenv('HUBSPOT_ACCESS_TOKEN_FROM_ENV')
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/contacts']
 
