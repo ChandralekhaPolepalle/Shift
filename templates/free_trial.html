@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shift Free Trial</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
+
+
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link href="static/css/home.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <style>
+
+        .main-content-text{
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 100%;
+            width: 100%;
+            margin-left:-5%;
+        }
+        .image-container{
+            opacity: 0.4;
+        }
+        .main-content h1 {
+            font-size:  3.5rem;
+        }
+
+        .free-trial .form-control{
+            background-color:#101015 !important;
+            opacity:1;
+            border: 1px solid #3a4a6f !important;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .free-trial .free-trial-btn{
+            margin-right: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-family: 'Roboto';
+        }
+
+        .free-trial a{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: 'Roboto';
+            color: white;
+        }
+
+        .free-trial a:hover{
+            text-decoration: none;
+            color: white;
+            transform: scale(1.1);
+        }
+
+
+
+        @media (max-width: 768px) {
+            .main-content h1 {
+                font-size: 2rem;
+            }
+            .image-container{
+                display:none;
+            }
+
+            .main-content{
+                height: 50vh;
+                margin-left: 5%;
+            }
+
+            .main-content-text {
+                padding: 1rem;
+                text-align: left;
+                background:transparent;
+            }
+            .free-trial .free-trial-btn{
+                margin-top: 5%;
+             }
+        }
+
+        @media (min-width: 1600px) {
+            .main-content {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 55%;
+                max-height:50vh;
+            }
+
+        }
+    </style>
+</head>
+<body style="background-color:#15141B;">
+
+   {% include 'nav.html' %}
+   {% include 'mobile_nav.html' %}
+
+   <!-- Main content -->
+
+    <div class="main-content">
+        <div class="main-content-text">
+
+            <h1>Elevate Your Fleet Management with SHIFT</h1>
+            <p>Focus on operations, not complexities. Streamline your fleet management with Shift and take control of your business with solutions for vehicle subscription, car sharing, digital dealership, loaner management, and data & telematics.</p>
+
+            <div class="container mt-5 free-trial">
+                <form action="/freeTrial" method="POST" class="d-flex flex-wrap justify-content-center">
+                    <div class="form-group mx-2 mb-2">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mx-2 mb-2 free-trial-btn">Get Free Trial Info</button>
+                    <a href="https://www.youtube.com/watch?v=QDMHY8CGehE" class="btn btn-link mx-2 mb-2 view-demo">View demo &gt;</a>
+                </form>
+            </div>
+
+<!--            <div class="row">-->
+<!--            <div class="form-wrapper">-->
+<!--                <form action="/freeTrial" method="POST" class="form-inline">-->
+<!--                    <div class="form-group">-->
+<!--                        <input type="email" class="form-control email-input" name="email" placeholder="Email Address" required>-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn-custom ">Get Free Trial Info</button>-->
+<!--                </form>-->
+<!--                <a href="https://www.youtube.com/watch?v=QDMHY8CGehE" class="btn-see-more">View Demo &gt;</a>-->
+<!--            </div>-->
+<!--            </div>-->
+        </div>
+            <div class="image-container">
+                <img src="/static/images/free_trial.png" class="img-fluid" alt="home bg Image">
+            </div>
+    </div>
+
+
+
+    {% include 'subscription_form.html' %}
+    {% include 'footer.html' %}
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+</body>
+</html>

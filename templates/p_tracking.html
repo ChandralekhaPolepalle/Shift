@@ -3,13 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>White Label Customer App</title>
+    <title>Tracking & Telematics</title>
     <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="static/css/home.css" rel="stylesheet">
+    <link href="static/css/features.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <style>
+
+        <style>
+        body{
+            background-color: #16151A;
+            font-family:'Archivo';
+        }
+
+        .pf-features {
+            max-width: 75%;
+            margin: 0 auto;
+        }
+
+        .pf-features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .pf-feature-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pf-feature-card {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pf-feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pf-feature-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .pf-feature-card button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            background-image: linear-gradient(#2158DB, black);
+            cursor: pointer;
+        }
+
+
+        @media (max-width: 480px) {
+            .pf-feature-card {
+                width: 100%;
+            }
+            .text-overlay {
+                top: 20%;
+            }
+
+            .text-overlay h1 {
+                font-size: 0.8rem;
+            }
+
+            .text-overlay p {
+                font-size: 0.4rem;
+            }
+        }
+
+        @media (min-width: 1600px){
+            .features-section {
+                margin-left:15%;
+            }
+        }
+    </style>
+
+    </style>
 </head>
 <body>
     {% include 'nav.html' %}
@@ -18,10 +103,10 @@
     <div class="main-content">
         <div class="main-content-text">
             <p>Products > Tracking & Telematics</p>
-<!--            <h5>WHITE-LABEL</h5>-->
+
             <h1>TRACKING & TELEMATICS</h1>
             <p>Connect, automate, and manage physical operations with a fully integrated product suite. SHIFT combines ease of use with constantly evolving features to help you stay ahead.</p>
-            <a href="#subscribe-container" class="btn-custom">Free Trial</a>
+            <a href="freeTrial" class="btn-custom">Free Trial</a>
             <a href="comingSoon" class="btn-see-more">See more &gt;</a>
         </div>
         <div class="image-container">
@@ -29,9 +114,57 @@
         </div>
     </div>
 
+    <section class="features-section">
+        <h2>Features<span class="subtitle"> to meet the unique needs of your business</span></h2>
+        <div class="features-container">
+            <a>
+            <div class="feature-card">
+                <i class="fa-solid fa-car"></i>
+                <h3>Real-Time Vehicle Tracking</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            </a>
+            <a>
+            <div class="feature-card">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h3>Route Optimization</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            </a>
+            <a>
+            <div class="feature-card">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>Telematics Data Analysis</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            </a>
+            <a>
+            <a>
+            <div class="feature-card">
+                <i class="fa-solid fa-warehouse"></i>
+                <h3>Driver Behavior Monitoring</h3>
+                <p>Research and brand strategy Identification system Product design and packaging</p>
+            </div>
+            </a>
+
+        </div>
+    </section>
 
 
-    {% include 'customer_app_msm.html' %}
+<!--    <div class="main-content">-->
+<!--        <div class="row">-->
+<!--            <div class="main-content-text col-lg-6 col-md-8 col-12">-->
+<!--                <p class="breadcrumb-text">Products > White-Label Customer App</p>-->
+<!--                <h5 class="header-small">WHITE-LABEL</h5>-->
+<!--                <h1 class="header-large">CUSTOMER APP</h1>-->
+<!--                <p class="description-text">Connect, automate, and manage physical operations with a fully integrated product suite. SHIFT combines ease of use with constantly evolving features to help you stay ahead.</p>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 col-md-4 col-12">-->
+<!--                <img src="/static/images/customer_app_bg.png" class="img-fluid" alt="Multi-Service Modules Image">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
     {% include 'subscription_form.html' %}
     {% include 'footer.html' %}
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -40,3 +173,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
