@@ -10,11 +10,11 @@ from flask import Flask, request, jsonify
 import httpx
 import smtplib
 from flask_mail import Mail, Message
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-load_dotenv()
+# load_dotenv()
 
 HUBSPOT_ACCESS_TOKEN = os.getenv('HUBSPOT_ACCESS_TOKEN_FROM_ENV')
 
@@ -221,6 +221,104 @@ def pTracking():
 def pDigitalKey():
     return render_template('p_digital_key.html')
 
+@app.route('/technologyCollisionDetection')
+def tCollisionDetection():
+    return render_template('t_collision_detection.html')
+
+@app.route('/solutionFleetManagement')
+def sFleetManagement():
+    return render_template('s_fleet_management.html')
+
+@app.route('/solutionCarSubscription')
+def sCarSubscription():
+    return render_template('s_car_subscription.html')
+
+@app.route('/solutionShortTermRental')
+def sShortTermRental():
+    return render_template('s_short_term_rental.html')
+
+@app.route('/solutionDigitalDealership')
+def sDigitalDealership():
+    return render_template('s_digital_dealership.html')
+
+@app.route('/solutionLoanerManagement')
+def sLoanerManagement():
+    return render_template('s_loaner_management.html')
+
+@app.route('/solutionOEM')
+def sOEM():
+    return render_template('s_oem.html')
+
+@app.route('/solutionDelivery')
+def sDelivery():
+    return render_template('s_delivery.html')
+
+@app.route('/solutionEnergy')
+def sEnergy():
+    return render_template('s_energy.html')
+
+@app.route('/solutionPassengerTransit')
+def sPassengerTransit():
+    return render_template('s_passenger_transit.html')
+
+@app.route('/solutionConstruction')
+def sConstruction():
+    return render_template('s_construction.html')
+
+@app.route('/solutionSMEs')
+def sSMEs():
+    return render_template('s_sme.html')
+
+@app.route('/solutionEnterprise')
+def sEnterprise():
+    return render_template('s_enterprise.html')
+@app.route('/technologyTelematics')
+def tTelematics():
+    return render_template('t_telematics.html')
+
+@app.route('/technologyAIInspection')
+def tAiInspection():
+    return render_template('t_ai_inspection.html')
+
+@app.route('/technologyPredictiveMaintenance')
+def tPredictiveMaintenance():
+    return render_template('t_ai_predictive_maintenance.html')
+
+@app.route('/technologyIntelligentRoutePlaning')
+def tIntelligentRoutePlaning():
+    return render_template('t_intelligent_route_planing.html')
+
+@app.route('/technologyChargerRoutePlaning')
+def tChargerRoutePlaning():
+    return render_template('t_charger_route_planing.html')
+
+@app.route('/technologyDigitalKey')
+def tDigitalKey():
+    return render_template('t_digital_key.html')
+
+@app.route('/technologyIntegrationPartners')
+def tIntegrationPartners():
+    return render_template('t_integration_partners.html')
+
+@app.route('/technologyDeveloperPortalAPIs')
+def tDeveloperPortalAPIs():
+    return render_template('t_developer_portal_apis.html')
+
+@app.route('/freeTrial', methods=['GET', 'POST'])
+def freeTrial():
+    if request.method == 'POST':
+        email = request.form['email']
+        message = "Free Trial Info"
+
+        msg = Message('SHIFT Free Trial Info Regarding', sender='tech@shiftgroup.ca', recipients=[email])
+        msg.body = f"Message: {message}"
+
+        thread = threading.Thread(target=send_async_email, args=(app, msg))
+        thread.start()
+
+
+    return render_template('free_trial.html')
+
 def send_async_email(app, msg):
     with app.app_context():
         try:
@@ -233,7 +331,6 @@ def send_async_email(app, msg):
 @app.route('/contactUs', methods=['GET', 'POST'])
 def contactUs():
     if request.method == 'POST':
-        print("TEST")
         name = request.form['name']
         email = request.form['email']
         subject = request.form['subject']

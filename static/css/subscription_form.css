@@ -17,7 +17,6 @@ html {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: -5%;
             min-height: 75vh;
             background-color: #16151A;
             padding: 20px;
@@ -167,6 +166,8 @@ html {
         .subscribe-form .form-check {
             display: flex;
             align-items: center;
+            padding-left: 14rem;
+            text-wrap: nowrap;
         }
 
         .subscribe-form .form-check-input {
@@ -269,8 +270,11 @@ html {
             .subscribe-form {
                 padding: 10%;
             }
-            .form-check {
+
+            .subscribe-form .form-check {
                 margin-top:10%;
+                padding-left: 2rem;
+                text-wrap: wrap;
             }
             .subscribe-form .form-check-input {
                 width: 20px;
