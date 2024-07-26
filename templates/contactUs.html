@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <style>
         body, html {
             height: 100%;
@@ -140,6 +142,167 @@
             transform: scale(1.05);
         }
 
+        .subscribe-form .dropdown-toggle {
+            background-color:#101015;
+            border: 1px solid #3a4a6f;
+            color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            width: 80%;
+            transition: all 0.3s ease;
+        }
+        .subscribe-form .dropdown-menu{
+            margin-top: 10%;
+            background-color:#101015;
+            border: 1px solid #3a4a6f;
+            color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            width: 80%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .dropdown-item{
+            cursor: pointer;
+            color: white !important;
+        }
+
+
+        .dropdown-menu .dropdown-item:focus, .dropdown-menu .dropdown-item:hover {
+            opacity: 0.8;
+            background-color: transparent !important;
+            color: inherit;
+            transform: scale(1.02);
+        }
+
+        .dropdown-item:focus, .dropdown-item:hover {
+            background-color: transparent !important;
+            opacity: 1;
+        }
+
+
+        .dropdown .btn-secondary {
+            background-color: #101015 !important;
+            border: 1px solid #3a4a6f;
+            color: #fff;
+            font-family: 'Archivo';
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .dropdown .btn-secondary:hover,
+        .dropdown .btn-secondary:focus,
+        .dropdown .btn-secondary:active {
+            border-color: var(--primary-color);
+            background-color:#16151A;
+        }
+
+
+        .dropdown .btn-secondary::after {
+            display: none;
+        }
+
+        .subscribe-form .form-control:hover,
+        .subscribe-form .form-control:focus {
+            border-color: var(--primary-color);
+            background-color:#16151A;
+        }
+
+        .subscribe-form .form-check {
+            display: flex;
+            align-items: center;
+            padding-left: 14rem;
+            text-wrap: nowrap;
+        }
+
+        .subscribe-form .form-check-input {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: transparent;
+            border: 1px solid #3a3a68;
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe-form .form-check-input:checked {
+            background-color: #16151A;
+            opacity:0.7;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px var(--primary-color);
+        }
+
+        .subscribe-form .form-check-input:checked::before {
+
+            color: white;
+            font-size: 16px;
+            position: absolute;
+            top: 2px;
+            left: 4px;
+        }
+
+
+        .subscribe-form .form-check-input:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px var(--primary-color);
+        }
+
+        .subscribe-form .form-check-label {
+            color: white;
+
+            text-wrap: wrap;
+        }
+
+        .form-check .form-check-input {
+            float: left;
+            margin-left: -10.5em !important;
+        }
+
+        .subscribe-form .btn-primary {
+            background-color: #16151A;
+            border: 1px solid #3a3a68;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Roboto', 'Archivo';
+        }
+
+        .subscribe-form .btn-primary:hover {
+            background-color: #2860E1;
+            border: 1px solid #3a3a68;
+            color: white;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        .subscribe-form .form-control,
+        .subscribe-form select.form-control {
+            background-color: #16151A;
+            opacity: 0.7;
+            border: 1px solid #3a4a6f;
+            color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            width: 80%;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe-form select.form-control:hover,
+        .subscribe-form select.form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px var(--primary-color);
+        }
+
         @media (max-width: 1024px) {
             .contact-container {
                 flex-direction: column;
@@ -156,11 +319,24 @@
 
         /* Mobile Styling */
         @media (max-width: 768px) {
+
+            .contact-container {
+                display: flex;
+                justify-content: center;
+                align-items: stretch;
+                height: 130vh;
+                max-height: 130vh;
+                padding: 20px;
+                width: 60%;
+                max-width: 1000px;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+
             .contact-container {
                 padding: 1rem;
                 flex-direction: column;
                 align-items: center;
-                height: auto;
                 width: 100%;
             }
 
@@ -168,10 +344,12 @@
              {
                 max-width: 100%;
                 padding: 1rem;
+                width: 100%;
             }
             .contact-form{
                 width: 100%;
-                margin-bottom: 135%;
+                padding: 1rem;
+                max-width: 100%;
             }
 
             .contact-info ul li {
@@ -196,13 +374,13 @@
             <h2>Let's get in touch</h2>
             <p>We're open for any suggestion or just to have a chat</p>
             <ul>
-                <li>
-                    <p class="icon"><i class="fa-solid fa-phone"></i></p>
-                    <p>+ 1234 567 898</p>
-                </li>
+<!--                <li>-->
+<!--                    <p class="icon"><i class="fa-solid fa-phone"></i></p>-->
+<!--                    <p>+ 1234 567 898</p>-->
+<!--                </li>-->
                 <li>
                     <p class="icon"><i class="fa-solid fa-envelope"></i></p>
-                    <p>info@shiftgroup.ca</p>
+                    <p>tech@shiftgroup.ca</p>
                 </li>
                  <li>
                     <p class="icon"><i class="fa-solid fa-location-dot"></i></p>
@@ -221,20 +399,108 @@
             </ul>
         </div>
         <div class="contact-form">
-            <h2>Quick Contact</h2>
-            <form action="/contactUs" method="POST">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Full Name" required>
-                    <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+            <form class="subscribe-form" action="/subscription_form" method="POST">
+        <h2>Quick Contact</h2>
+        {% if message %}
+        <div class="alert alert-success msg" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="First Name *" required>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                <div class="form-group col-md-6">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address *" >
                 </div>
-                <div class="form-group">
-                    <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name *" required>
                 </div>
-                <button type="submit" class="btn-custom">Send Message</button>
-            </form>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="companyWebsite" name="companyWebsite" placeholder="Company Website">
+                </div>
+            </div>
+            <div class="form-row">
+            <div class="dropdown col-md-6">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Interested Solution
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="fleetManagement" name="interestedSolution" value="Fleet Management">
+                        <label for="fleetManagement">Fleet Management</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="carSubscription" name="interestedSolution" value="Car Subscription">
+                        <label for="carSubscription">Car Subscription</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="shortTermRental" name="interestedSolution" value="Short-term Rental">
+                        <label for="shortTermRental">Short-term Rental</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="digitalDealership" name="interestedSolution" value="Digital Dealership">
+                        <label for="digitalDealership">Digital Dealership</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input type="checkbox" class="form-check-input" id="loanerManagement" name="interestedSolution" value="Loaner Management">
+                        <label for="loanerManagement">Loaner Management</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown col-md-6">
+                <button id="fleetSizeDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Fleet Size
+                </button>
+                 <ul class="dropdown-menu">
+                    <li class="dropdown-item" data-value="Fleet Size (>50)">Fleet Size (>50)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>100)">Fleet Size (>100)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>500)">Fleet Size (>500)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>1000)">Fleet Size (>1000)</li>
+                    <li class="dropdown-item" data-value="Fleet Size (>1000+)">Fleet Size (>1000+)</li>
+                </ul>
+                <input type="hidden" id="fleetSize" name="fleetSize">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6" >
+                <textarea id="message" class="form-control" name="message" placeholder="Message"></textarea>
+            </div>
+        </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="form-check col-md-6">
+                <input type="checkbox" class="form-check-input" id="subscribeCheck" name="subscribeCheck">
+                <label class="form-check-label" for="subscribeCheck">Agree to receive email from SHIFT and stay up-to-date.</label>
+            </div>
+        </div>
+    </form>
+
+
+
+
+<!--            <form action="/contactUs" method="POST">-->
+<!--                <div class="form-group">-->
+<!--                    <input type="text" class="form-control" name="name" placeholder="Full Name" required>-->
+<!--                    <input type="email" class="form-control" name="email" placeholder="Email Address" required>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <input type="text" class="form-control" name="subject" placeholder="Subject" required>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <textarea name="message" class="form-control" placeholder="Message" required></textarea>-->
+<!--                </div>-->
+<!--                <button type="submit" class="btn-custom">Send Message</button>-->
+<!--            </form>-->
         </div>
     </div>
     {% include 'footer.html' %}

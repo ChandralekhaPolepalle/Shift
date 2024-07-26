@@ -82,6 +82,7 @@ def subscription_form():
         interested_solutions = request.form.getlist('interestedSolution')
         fleet_size = request.form['fleetSize']
         interested_solutions_str = ', '.join(interested_solutions)
+        message = request.form['message']
 
         values = [[name,email, company_name, company_website,subscribe_check,interested_solutions_str,fleet_size]]
         body = {'values': values}
@@ -121,8 +122,8 @@ def subscription_form():
                 "website":company_website,
                 "subscription":subscribe_check,
                 "interested_solution": interested_solutions_str,
-                "fleet_size":fleet_size
-
+                "fleet_size":fleet_size,
+                "message":message
             }
         }
 
@@ -132,6 +133,17 @@ def subscription_form():
         }
 
         response = httpx.post(url, json=data, headers=headers)
+
+        # Mail
+
+        msg = Message('SHIFT Contact Us Form Submission', sender='tech@shiftgroup.ca',
+                      recipients=['tech@shiftgroup.ca','suman@shiftgroup.ca','sana@shiftgroup.ca'])
+        msg.body = (f"Name: {name}\nEmail: {email}\nCompany: {company_name}\nWebsite: {company_website}"
+                    f"\nSubscription: {subscribe_check}\nInterested Solution: {interested_solutions_str}"
+                    f"\nFleet Size: {fleet_size}\nMessage: {message}")
+
+        thread = threading.Thread(target=send_async_email, args=(app, msg))
+        thread.start()
 
         if response.status_code == 201:
             print("Contact added successfully")
