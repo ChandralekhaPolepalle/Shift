@@ -12,7 +12,7 @@
 <body>
 <div class="subscribe-container" id="subscribe-container">
     <form class="subscribe-form" action="/subscription_form" method="POST">
-        <h2>Subscribe</h2>
+        <h2>Quick Contact</h2>
         {% if message %}
         <div class="alert alert-success msg" role="alert">
             {{ message }}
@@ -79,6 +79,11 @@
             </div>
         </div>
 
+        <div class="form-row">
+            <div class="form-group col-md-6" >
+                <textarea id="message" class="form-control" name="message" placeholder="Message"></textarea>
+            </div>
+        </div>
 
         </div>
         <div class="row">
