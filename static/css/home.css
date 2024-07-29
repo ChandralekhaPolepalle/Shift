@@ -18,7 +18,8 @@ body, html {
 
 .main-content-text {
     z-index: 2;
-    max-width: 600px;
+    max-width: 665px;
+    margin-top: -5%;
 }
 
 .main-content h5 {

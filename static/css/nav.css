@@ -38,7 +38,7 @@ body {
     height: auto;
     width: 150px;
     margin-left: -22%;
-    transition: width 0.3s ease;
+    transition: width 0.7s ease, transform 0.7s ease;
 }
 
 .navbar-logo img:hover,
