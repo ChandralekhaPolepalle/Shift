@@ -233,6 +233,10 @@ def pTracking():
 def pDigitalKey():
     return render_template('p_digital_key.html')
 
+@app.route('/productDroneFleetManagement')
+def pDroneFleetManagement():
+    return render_template('p_fleet_management.html')
+
 @app.route('/technologyCollisionDetection')
 def tCollisionDetection():
     return render_template('t_collision_detection.html')

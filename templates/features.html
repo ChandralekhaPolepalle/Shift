@@ -72,7 +72,6 @@
             color: #2860E1;
         }
 
-
         body {
             font-family: Arial, sans-serif;
             background-color: #;
@@ -204,7 +203,7 @@
         }
         .img-overlay {
           top:25%;
-          left: 35%;
+          left: 22%;
           position: absolute;
           transform: translate(-50%, -50%);
           z-index: 2;
@@ -214,14 +213,31 @@
 
         .img-overlay img {
           display: block;
-          width:500px;
+          width:745px;
           height: auto;
           z-index:2;
         }
 
+        #tab2 .img-overlay{
+           left:30%;
+        }
+
+        #tab2 .img-overlay img {
+           width:500px;
+        }
+
+        #tab3 .img-overlay{
+           left:33%;
+        }
+
+        #tab3 .img-overlay img {
+           width:400px;
+        }
+
 
         .pf-carousel-slide img {
-            transition: transform 0.3s ease-in-out;
+
+            transition: width 0.9s ease, transform 0.9s ease;
             z-index:1;
         }
 
@@ -229,7 +245,18 @@
             transform: scale(1.05);
         }
 
+        .left{
+            position: relative;
+            left: 10% !important;
+        }
+
+        .right{
+            position: relative;
+            left: -10% !important;
+        }
+
         .pf-carousel-controls span {
+            left: 40%;
             padding: 10px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
@@ -251,7 +278,8 @@
         }
 
         .pf-carousel-controls span:hover {
-            animation: bounce 0.6s;
+            transform : scale(1.5);
+            color:grey;
         }
 
 
@@ -377,22 +405,32 @@
                     <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
                         <h1>All-In-One Admin Portal</h1>
-                        <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
+                        <p>Manage and automate all operations seamlessly.</p>
                     </div>
                 </div>
                 <div class="pf-carousel-slide">
                     <div class="img-overlay">
-                      <img src="\static\images\macbook.png" alt="Overlay Image">
+                      <img src="\static\images\inventory_management.png" alt="Overlay Image">
                     </div>
                     <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
                         <h1>All-In-One Admin Portal</h1>
-                        <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
+                        <p>Manage and automate all operations seamlessly.</p>
+                    </div>
+                </div>
+                <div class="pf-carousel-slide">
+                    <div class="img-overlay">
+                      <img src="\static\images\accounting_finance.png" alt="Overlay Image">
+                    </div>
+                    <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
+                    <div class="text-overlay">
+                        <h1>All-In-One Admin Portal</h1>
+                        <p>Manage and automate all operations seamlessly.</p>
                     </div>
                 </div>
                 <div class="pf-carousel-controls">
-                    <span onclick="changeSlide(-1)">&#10094;</span>
-                    <span onclick="changeSlide(1)">&#10095;</span>
+                    <span class="left" onclick="changeSlide(-1)">&#10094;</span>
+                    <span class="right" onclick="changeSlide(1)">&#10095;</span>
                 </div>
             </section>
             <section class="features-section">
@@ -461,18 +499,39 @@
             <section class="pf-carousel">
                 <div class="pf-carousel-slide">
                     <div class="img-overlay">
-                      <img src="\static\images\macbook.png" alt="Overlay Image" >
-
+                      <img src="\static\images\white_label_app_1.png" alt="Overlay Image" >
                     </div>
-                    <img src="\static\images\application_bg.png" alt="Admin Portal Slide 1">
+                    <img src="\static\images\tab2_bg.png" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
                         <h1>White-label Customer App</h1>
-                        <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
+                        <p>Deliver a branded, seamless mobile experience.</p>
+                    </div>
+                </div>
+
+                <div class="pf-carousel-slide">
+                    <div class="img-overlay">
+                      <img src="\static\images\white_label_app_2.png" alt="Overlay Image" >
+                    </div>
+                    <img src="\static\images\tab2_bg.png" alt="Admin Portal Slide 1">
+                    <div class="text-overlay">
+                        <h1>White-label Customer App</h1>
+                        <p>Deliver a branded, seamless mobile experience.</p>
+                    </div>
+                </div>
+
+                <div class="pf-carousel-slide">
+                    <div class="img-overlay">
+                      <img src="\static\images\white_label_app_3.png" alt="Overlay Image" >
+                    </div>
+                    <img src="\static\images\tab2_bg.png" alt="Admin Portal Slide 1">
+                    <div class="text-overlay">
+                        <h1>White-label Customer App</h1>
+                        <p>Deliver a branded, seamless mobile experience.</p>
                     </div>
                 </div>
                 <div class="pf-carousel-controls">
-                    <span onclick="changeSlide(-1)">&#10094;</span>
-                    <span onclick="changeSlide(1)">&#10095;</span>
+                    <span class="left" onclick="changeSlide(-1)">&#10094;</span>
+                    <span class="right" onclick="changeSlide(1)">&#10095;</span>
                 </div>text
             </section>
             <section class="features-section">
@@ -543,27 +602,39 @@
         </div>
         <div id="tab3" class="pf-tab-content">
             <section class="pf-carousel">
-                <div class="pf-carousel-slide active">
-
-                    <img src="\static\images\hardware.png" alt="Admin Portal Slide 1">
+                <div class="pf-carousel-slide">
+                    <div class="img-overlay">
+                      <img src="\static\images\agent_1.png" alt="Overlay Image">
+                    </div>
+                    <img src="\static\images\tab2_bg.png" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
                         <h1>Agent Operational App</h1>
-                        <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
+                        <p>Streamline operations and enhance real-time communication.</p>
                     </div>
                 </div>
                 <div class="pf-carousel-slide">
                     <div class="img-overlay">
-                      <img src="\static\images\macbook.png" alt="Overlay Image">
+                      <img src="\static\images\agent_2.png" alt="Overlay Image">
                     </div>
-                    <img src="\static\images\admin_portal_bg.jpg" alt="Admin Portal Slide 1">
+                    <img src="\static\images\tab2_bg.png" alt="Admin Portal Slide 1">
                     <div class="text-overlay">
-                        <h1>All-In-One Admin Portal</h1>
-                        <p>SHIFT gaining valuable insights into vehicle/driver performance and usage.</p>
+                        <h1>Agent Operational App</h1>
+                        <p>Streamline operations and enhance real-time communication.</p>
+                    </div>
+                </div>
+                <div class="pf-carousel-slide">
+                    <div class="img-overlay">
+                      <img src="\static\images\agent_3.png" alt="Overlay Image">
+                    </div>
+                    <img src="\static\images\tab2_bg.png" alt="Admin Portal Slide 1">
+                    <div class="text-overlay">
+                        <h1>Agent Operational App</h1>
+                        <p>Streamline operations and enhance real-time communication.</p>
                     </div>
                 </div>
                 <div class="pf-carousel-controls">
-                    <span onclick="changeSlide(-1)">&#10094;</span>
-                    <span onclick="changeSlide(1)">&#10095;</span>
+                    <span class="left" onclick="changeSlide(-1)">&#10094;</span>
+                    <span class="right" onclick="changeSlide(1)">&#10095;</span>
                 </div>
             </section>
             <section class="features-section">
