@@ -120,8 +120,9 @@ body, html {
     transform: translate(-30%);
     color: white;
     border-radius: 4px;
-    font-weight:bold;
+    font-weight:lighter;
     text-wrap: wrap;
+    letter-spacing:0.05em;
 }
 
 .bai-carousel-item:hover {
@@ -221,7 +222,7 @@ body, html {
 }
 
     .bai-carousel-controls {
-        display:flex-wrap;
+        display:none;
         justify-content: left;
         position: absolute;
         margin-left: 50%;
