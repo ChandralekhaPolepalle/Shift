@@ -51,31 +51,75 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.querySelector('.bai-carousel');
-            const items = document.querySelectorAll('.bai-carousel-item');
-            const prevArrow = document.querySelector('.bai-arrow-left');
-            const nextArrow = document.querySelector('.bai-arrow-right');
-            let currentIndex = 0;
+    document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.querySelector('.bai-carousel');
+        const items = document.querySelectorAll('.bai-carousel-item');
+        const prevArrow = document.querySelector('.bai-arrow-left');
+        const nextArrow = document.querySelector('.bai-arrow-right');
+        let currentIndex = 0;
+        let startX;
+        let isSwiping = false;
 
-            function updateCarousel() {
-                carousel.style.transform = `translateX(-${currentIndex * items[0].offsetWidth}px)`;
-            }
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * items[0].offsetWidth}px)`;
+        }
 
-            prevArrow.addEventListener('click', function () {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                }
-            });
-
-            nextArrow.addEventListener('click', function () {
+        function handleSwipe(startX, endX) {
+            if (startX - endX > 50) {
+                // Swiped left
                 if (currentIndex < items.length - 1) {
                     currentIndex++;
                     updateCarousel();
                 }
-            });
+            } else if (endX - startX > 50) {
+                // Swiped right
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            }
+        }
+
+        prevArrow.addEventListener('click', function () {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
         });
+
+        nextArrow.addEventListener('click', function () {
+            if (currentIndex < items.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        carousel.addEventListener('touchstart', function (e) {
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+        });
+
+        carousel.addEventListener('touchmove', function (e) {
+            if (isSwiping) {
+                const currentX = e.touches[0].clientX;
+                const deltaX = startX - currentX;
+                // Prevent scrolling while swiping
+                if (Math.abs(deltaX) > 10) {
+                    e.preventDefault();
+                }
+            }
+        });
+
+        carousel.addEventListener('touchend', function (e) {
+            if (isSwiping) {
+                const endX = e.changedTouches[0].clientX;
+                handleSwipe(startX, endX);
+                isSwiping = false;
+            }
+        });
+    });
+
+
     </script>
 
 </body>
