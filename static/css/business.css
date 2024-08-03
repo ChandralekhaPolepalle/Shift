@@ -98,14 +98,30 @@ body, html {
     font-size: 1.5em;
     margin: 10px 0;
     position: absolute;
-    padding: 5px 10px;
+    padding: 5px 135px;
     left: 50%;
-    bottom: 10px;
+    bottom: 60px;
     transform: translate(-50%);
     color: white;
     border-radius: 4px;
     font-weight:bold;
     text-wrap: nowrap;
+    background-color: rgba(0,0,0,.5);
+
+}
+
+.bai-carousel-item-desc {
+    font-size: 0.8em;
+    margin: 5px 0;
+    position: absolute;
+    padding: 5px 10px;
+    left: 40%;
+    bottom: 0px;
+    transform: translate(-30%);
+    color: white;
+    border-radius: 4px;
+    font-weight:bold;
+    text-wrap: wrap;
 }
 
 .bai-carousel-item:hover {
@@ -199,6 +215,10 @@ body, html {
         font-size: 1.2em;
         padding: 3px 6px;
     }
+
+    .bai-carousel-item-desc {
+         padding: 5px 5px;
+}
 
     .bai-carousel-controls {
         display:flex-wrap;

@@ -26,6 +26,9 @@ body, html {
     margin-left: 7%;
     margin-right: 7%;
 }
+.hkf-features-container a:hover{
+    text-decoration:none;
+}
 
 .hkf-feature {
     overflow: hidden;
