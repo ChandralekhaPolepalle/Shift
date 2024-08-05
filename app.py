@@ -320,6 +320,15 @@ def tIntegrationPartners():
 def tDeveloperPortalAPIs():
     return render_template('t_developer_portal_apis.html')
 
+@app.route('/privacyPolicy')
+def privacyPolicy():
+    return render_template('privacy.html')
+
+@app.route('/termsAndConditions')
+def termsAndConditions():
+    return render_template('terms_conditions.html')
+
+
 @app.route('/freeTrial', methods=['GET', 'POST'])
 def freeTrial():
     if request.method == 'POST':

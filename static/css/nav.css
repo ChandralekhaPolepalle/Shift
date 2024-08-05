@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-color: transparent;
+    background-color: #16151A !important;
     color: #fff;
     font-family: 'Archivo', sans-serif;
     margin: 0;
@@ -17,7 +17,7 @@ body {
     height: 80px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: transparent;
+    background-color: #16151A !important;
     display: flex;
     align-items: center;
     justify-content: center;
