@@ -10,6 +10,88 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="static/css/home.css" rel="stylesheet">
+    <link href="static/css/features.css" rel="stylesheet">
+      <style>
+
+        <style>
+        body{
+            background-color: #16151A;
+            font-family:'Archivo';
+        }
+
+        .pf-features {
+            max-width: 75%;
+            margin: 0 auto;
+        }
+
+        .pf-features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .pf-feature-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pf-feature-card {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pf-feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pf-feature-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .pf-feature-card button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: default;
+        }
+
+        .feature-card:hover {
+            background-image: linear-gradient(#2158DB, black);
+            cursor: default;
+        }
+
+
+        @media (max-width: 480px) {
+            .pf-feature-card {
+                width: 100%;
+            }
+            .text-overlay {
+                top: 20%;
+            }
+
+            .text-overlay h1 {
+                font-size: 0.8rem;
+            }
+
+            .text-overlay p {
+                font-size: 0.4rem;
+            }
+        }
+
+        @media (min-width: 1600px){
+            .features-section {
+                margin-left:15%;
+            }
+        }
+    </style>
 </head>
 <body>
     {% include 'nav.html' %}
@@ -29,7 +111,73 @@
         </div>
     </div>
 
-    {% include 'multi_service_module.html' %}
+    <section class="features-section">
+        <h2>Features<span class="subtitle"> to meet the unique needs of your business</span></h2>
+        <div class="features-container">
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Dashboard Overview</h3>
+                    <p>Get a comprehensive overview of fleet operations on a single dashboard</p>
+                </div>
+            </a>
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Real-Time Tracking</h3>
+                    <p>Monitor the location of all vehicles in real-time for enhanced management</p>
+                </div>
+            </a>
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Maintenance Management</h3>
+                    <p>Schedule and track vehicle maintenance to minimize downtime</p>
+                </div>
+            </a>
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Alert Notifications</h3>
+                    <p>Receive instant notifications for critical events and issues</p>
+                </div>
+            </a>
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Reporting & Analytics</h3>
+                    <p>Generate detailed reports and gain insights through analytics</p>
+                </div>
+            </a>
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-route"></i>
+                    <h3>Route Optimization</h3>
+                    <p>Plan and optimize routes to enhance efficiency and reduce costs</p>
+                </div>
+            </a>
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>User Access Control</h3>
+                    <p>Manage user permissions and access levels for enhanced security</p>
+                </div>
+            </a>
+
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-id-card-alt"></i>
+                    <h3>Driver Management</h3>
+                    <p>Track driver performance and manage driver-related information</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
     {% include 'subscription_form.html' %}
     {% include 'footer.html' %}
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
