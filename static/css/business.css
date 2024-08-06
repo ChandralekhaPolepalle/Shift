@@ -23,6 +23,7 @@ body, html {
 }
 
 .bai-content {
+    padding-right:3%;
     flex: 1;
     max-width: 40%;
     text-align: left;
@@ -135,7 +136,7 @@ body, html {
     width: 100%;
     margin-top: 20px;
     position: absolute;
-    margin-left: 115%;
+    margin-left: 50%;
     transform: translateX(-50%);
     background:transparent;
 }
