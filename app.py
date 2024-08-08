@@ -328,6 +328,17 @@ def privacyPolicy():
 def termsAndConditions():
     return render_template('terms_conditions.html')
 
+@app.route('/media')
+def media():
+    return render_template('media.html')
+
+@app.route('/mediaBlog1')
+def mediaBlog1():
+    return render_template('media_blog_1.html')
+
+@app.route('/aboutUs')
+def aboutUs():
+    return render_template('about_us.html')
 
 @app.route('/freeTrial', methods=['GET', 'POST'])
 def freeTrial():
