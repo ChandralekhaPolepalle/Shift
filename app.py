@@ -137,7 +137,7 @@ def subscription_form():
         # Mail
 
         msg = Message('SHIFT Contact Us Form Submission', sender='tech@shiftgroup.ca',
-                      recipients=['tech@shiftgroup.ca','suman@shiftgroup.ca','sana@shiftgroup.ca'])
+                      recipients=['tech@shiftgroup.ca','suman@shiftgroup.ca','sana@shiftgroup.ca','muhammad@shiftgroup.ca'])
         msg.body = (f"Name: {name}\nEmail: {email}\nCompany: {company_name}\nWebsite: {company_website}"
                     f"\nSubscription: {subscribe_check}\nInterested Solution: {interested_solutions_str}"
                     f"\nFleet Size: {fleet_size}\nMessage: {message}")
