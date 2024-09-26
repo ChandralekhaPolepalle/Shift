@@ -253,6 +253,10 @@ def sCarSubscription():
 def sShortTermRental():
     return render_template('s_short_term_rental.html')
 
+@app.route('/solutionEbike')
+def sEbike():
+    return render_template('s_ebike.html')
+
 @app.route('/solutionDigitalDealership')
 def sDigitalDealership():
     return render_template('s_digital_dealership.html')
