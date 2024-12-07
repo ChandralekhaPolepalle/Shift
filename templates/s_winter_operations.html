@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Operations</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/dark_logo.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="static/css/home.css" rel="stylesheet">
+    <link href="static/css/features.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <style>
+
+        <style>
+        body{
+            background-color: #16151A;
+            font-family:'Archivo';
+        }
+
+        .pf-features {
+            max-width: 75%;
+            margin: 0 auto;
+        }
+
+        .pf-features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .pf-feature-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pf-feature-card {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pf-feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pf-feature-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .pf-feature-card button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: default;
+        }
+
+        .feature-card:hover {
+            background-image: linear-gradient(#2158DB, black);
+            cursor: default;
+        }
+
+
+        @media (max-width: 480px) {
+            .pf-feature-card {
+                width: 100%;
+            }
+            .text-overlay {
+                top: 20%;
+            }
+
+            .text-overlay h1 {
+                font-size: 0.8rem;
+            }
+
+            .text-overlay p {
+                font-size: 0.4rem;
+            }
+        }
+
+        @media (min-width: 1600px){
+            .features-section {
+                margin-left:15%;
+            }
+        }
+    </style>
+
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+   {% include 'mobile_nav.html' %}
+   <!-- Main content -->
+    <div class="main-content">
+        <div class="main-content-text">
+            <p>Solutions > Winter Operations</p>
+            <h1>WINTER UTILITY FLEET MANAGEMENT</h1>
+            <p>Optimize winter utility fleet operations. Monitor and control snowplow and de-icing operations in real-time, manage route efficiency, and ensure timely maintenance. Reduce operational costs and improve response times to winter weather events with advanced telematics tailored for harsh conditions.</p>
+            <a href="freeTrial" class="btn-custom">Free Trial</a>
+            <a href="comingSoon" class="btn-see-more">See more &gt;</a>
+        </div>
+        <div class="image-container">
+            <img src="/static/images/Customer App.png" class="img-fluid" alt="Customer App Image">
+        </div>
+    </div>
+
+    <section class="features-section">
+        <h2>Features<span class="subtitle"> to meet the unique needs of your business</span></h2>
+        <div class="features-container">
+            <a>
+            <div class="feature-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Real-Time Tracking </h3>
+                <p>Effectively manage routes and respond to emerging conditions</p>
+            </div>
+            </a>
+            <a>
+            <div class="feature-card">
+                <i class="fas fa-route"></i>
+                <h3>Route Optimization</h3>
+                <p>Determine efficient routes for snow removal and de-icing</p>
+            </div>
+            </a>
+            <a>
+            <div class="feature-card">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Vehicle Health Monitoring</h3>
+                <p>Monitor vehicle health to anticipate and prevent breakdowns</p>
+            </div>
+            </a>
+            <a>
+            <div class="feature-card">
+                <i class="fas fa-wrench"></i>
+                <h3>Material Tracking</h3>
+                <p>Manage essential supplies, ensuring availability and optimal usage</p>
+            </div>
+            </a>
+
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Driver Safety Features</h3>
+                    <p>Implement safety features such as collision alerts and stability controls </p>
+                </div>
+            </a>
+            <a>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Analytics</h3>
+                    <p>Analyze and report on fleet operations to improve efficiency and reduce costs</p>
+                </div>
+            </a>
+
+
+
+        </div>
+
+        </div>
+    </section>
+
+
+    {% include 'subscription_form.html' %}
+    {% include 'footer.html' %}
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
