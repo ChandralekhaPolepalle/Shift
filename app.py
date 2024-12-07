@@ -31,41 +31,6 @@ app.config['DEBUG'] = True
 
 mail = Mail(app)
 
-# # Load Google credentials from environment variable
-# try:
-#     google_credentials = os.getenv('GOOGLE_CREDENTIALS')
-#
-#     if google_credentials is None:
-#         raise ValueError("GOOGLE_CREDENTIALS environment variable is not set.")
-#     credentials_info = json.loads(google_credentials)
-#     credentials = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
-#
-#
-# except Exception as e:
-#     raise ValueError("Failed to load Google credentials. Ensure the environment variable is set correctly.") from e
-
-# # Google Sheets API setup
-# SPREADSHEET_ID = '1VGBJr6zFSilCvF7jCv_0ejlUR2CcST_QHCR4bZDXkwE'
-# RANGE_NAME = 'SHIFT Subscriptions!A2:F2'
-# service = build('sheets', 'v4', credentials=credentials)
-# people_service = build('people', 'v1', credentials=credentials)
-# sheet = service.spreadsheets()
-
-# GOOGLE_CREDENTIALS = os.getenv('GOOGLE_CREDENTIALS')
-# credentials_info = json.loads(GOOGLE_CREDENTIALS)
-# credentials = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
-# service = build('sheets', 'v4', credentials=credentials)
-# sheet = service.spreadsheets()
-# # SERVICE_ACCOUNT_FILE = 'credentials.json'
-#
-#
-
-#
-#
-# # credentials = Credentials.from_service_account_file(
-# #     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-# # service = build('sheets', 'v4', credentials=credentials)
-# # sheet = service.spreadsheets()
 
 @app.route('/')
 def index():
@@ -86,31 +51,6 @@ def subscription_form():
 
         values = [[name,email, company_name, company_website,subscribe_check,interested_solutions_str,fleet_size]]
         body = {'values': values}
-        print("---------------------------")
-        print(body)
-
-        # try:
-        #     sheet.values().append(
-        #         spreadsheetId=SPREADSHEET_ID,
-        #         range=RANGE_NAME,
-        #         valueInputOption='RAW',
-        #         body=body
-        #     ).execute()
-        #
-        #     # Add to Google Contacts
-        #     contact_body = {
-        #         'names': [{'givenName': name}],
-        #         'emailAddresses': [{'value': email}],
-        #         'memberships': [{'contactGroupMembership': {'contactGroupResourceName': 'contactGroups/SHIFT Subscriptions'}}]
-        #     }
-        #     contact_response = people_service.people().createContact(body=contact_body).execute()
-        #     logging.debug(f"Google Contacts response: {contact_response}")
-        #
-        #     message = "Thank you for subscribing!"
-        # except Exception as e:
-        #     logging.error(f"An error occurred: {e}")
-        #     message = f"An error occurred: {e}"
-        #     message = "Please provide vaild details"
 
         url = "https://api.hubapi.com/crm/v3/objects/contacts"
 
@@ -288,6 +228,23 @@ def sSMEs():
 @app.route('/solutionEnterprise')
 def sEnterprise():
     return render_template('s_enterprise.html')
+
+@app.route('/solutionWinterOperations')
+def sWinterOperations():
+    return render_template('s_winter_operations.html')
+
+@app.route('/solutionAirportAssetManagement')
+def sAirportAssetManagement():
+    return render_template('s_airport_asset_management.html')
+
+@app.route('/solutionRentFleetManagement')
+def sRentFleetManagemenr():
+    return render_template('s_hire_rent_fleet_management.html')
+
+@app.route('/solutionWasteManagement')
+def sWasteManagement():
+    return render_template('s_waste_management.html')
+
 @app.route('/technologyTelematics')
 def tTelematics():
     return render_template('t_telematics.html')
